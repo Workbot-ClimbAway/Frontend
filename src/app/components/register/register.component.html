@@ -1,22 +1,20 @@
-<div>
-  <div>
+<div class="loginContent">
+  <div class="loginContent__Title">
     <h1><strong>Bienvenido a Top Way</strong></h1>
     <h1><strong>INICIE SESIÓN</strong></h1>
   </div>
 
-  <form>
+  <form class="loginContent__form">
     <h3>INFORMACIÓN PERSONAL</h3>
     <div>
-
         <label>Nombres y apellidos</label>
         <input type="text">
-        <p>Este campo es obligatorio</p>
-
+        <p class="loginContent__form__warnings">Este campo es obligatorio</p>
     </div>
 
 
       <label>Distrito</label>
-      <select>
+      <select required>
         <option value="San_Borja">San Borja</option>
         <option value="MNiraflores">Miraflores</option>
         <option value="Los_Olivos">Los Olivos</option>
@@ -31,18 +29,18 @@
 
         <label>Email</label>
         <input type="email">
-        <p>Este campo es obligatorio</p>
-        <p>Este campo debe ser un correo con @</p>
+        <p class="loginContent__form__warnings">Este campo es obligatorio</p>
+        <p class="loginContent__form__warnings">Este campo debe ser un correo con @</p>
 
     </div>
 
-    <div>
+    <div class="loginContent__form__password">
 
         <label>Contraseña</label>
         <input type="text">
-        <p>Este campo es obligatorio</p>
-        <p>Debe tener los caracteres de la (A-Z), (a-z) y (0-9)</p>
-        <p>Debe tener por lo menos 5 caracteres</p>
+        <p class="loginContent__form__warnings">Este campo es obligatorio</p>
+        <p class="loginContent__form__warnings">Debe tener los caracteres de la (A-Z), (a-z) y (0-9)</p>
+        <p class="loginContent__form__warnings">Debe tener por lo menos 5 caracteres</p>
 
     </div>
 
@@ -50,7 +48,7 @@
 
     <br><br>
 
-    <div>
+    <div class="loginContent__form__end">
       <button type="submit">REGISTRARSE</button>
       <p>Para continuar, deberá aceptar nuestra política de privacidad & terminos del servicio</p>
     </div>
