@@ -15,9 +15,9 @@
     <div>
       <mat-form-field appearance="fill">
         <mat-label>Contraseña</mat-label>
-        <input matInput>
+        <input matInput [type]="passwordType">
         <button matSuffix type="button" mat-icon-button>
-          <mat-icon>visibility</mat-icon>
+          <mat-icon (click)="togglePassword()">{{passwordShown ? 'visibility' : 'visibility_off'}}</mat-icon>
         </button>
       </mat-form-field>
     </div>
