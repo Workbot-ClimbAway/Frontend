@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import {MatIconModule} from "@angular/material/icon";
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

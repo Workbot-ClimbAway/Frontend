@@ -5,25 +5,25 @@
     <img src="assets/logo.png" alt="Logo" title="Logo" />
   </div>
   <form class="loginContent__form">
-    <h3>Inicie sesión</h3>
+    <h3 style="color: white; font-size: 20px; font-weight: 500">Inicie sesión</h3>
     <div>
       <mat-form-field appearance="fill" class="loginContent__form__email">
         <mat-label>Email</mat-label>
-        <input type="email">
+        <input matInput type="email">
       </mat-form-field>
     </div>
     <div>
       <mat-form-field appearance="fill">
         <mat-label>Contraseña</mat-label>
-        <input>
-        <button matSuffix type="button">
+        <input matInput>
+        <button matSuffix type="button" mat-icon-button>
           <mat-icon>visibility</mat-icon>
         </button>
       </mat-form-field>
     </div>
     <div>
-      <button type="submit">Iniciar Sesión</button>
-      <p class="loginContent__submit--marginTop">Si aun no es usuario registrate <a href="#"><strong>Aqui</strong></a></p>
+      <button mat-raised-button color="primary" type="submit">Iniciar Sesión</button>
+      <p class="loginContent__submit--marginTop">Si aun no es usuario registrate <a style="color: black; " href="#"><strong>Aqui</strong></a></p>
     </div>
   </form>
 </div>
