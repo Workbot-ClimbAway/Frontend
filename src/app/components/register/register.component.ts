@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  passwordType: string = 'text';
   passwordShown: boolean = true;
 
   constructor() { }
@@ -17,6 +18,7 @@ export class RegisterComponent implements OnInit {
     if(this.passwordShown){
       this.passwordShown = false;
     }else{
+      this.passwordType = 'text';
       this.passwordShown = true;
     }
   }
