@@ -1,0 +1,10 @@
+.container-button{
+    width: 20%;
+    margin-left: 2%;
+    display: flex;
+    justify-content: space-between ;
+}
+
+.container-button button{
+     box-shadow: none; 
+}
