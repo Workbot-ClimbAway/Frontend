@@ -9,13 +9,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ClimbingGymDetailsComponent implements OnInit {
 
   text : string = "";
+  id ?: any =0;
 
   constructor(private activeRouter: ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
-    const heroId = this.activeRouter.snapshot.paramMap.get('id');
-    console.log(heroId);
-    this.text = "Climbing Gym Details " + heroId;
+    this.id = this.activeRouter.snapshot.paramMap.get('id');
+    console.log(this.id);
+    this.text = "Climbing Gym Details " + this.id;
   }
+
+  
 
 }

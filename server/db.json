@@ -447,24 +447,23 @@
   "images": [
     {
       "climbingGymId": 1,
-      "url_photo": [
-        {
-          "url": "https://firebasestorage.googleapis.com/v0/b/fir-dataapp-c6043.appspot.com/o/pirqa.png?alt=media&token=2a189aea-639e-4ab5-a471-fc5e6c5c999b",
-          "title": "Pirqa"
-        },
-        {
-          "url": "https://firebasestorage.googleapis.com/v0/b/fir-dataapp-c6043.appspot.com/o/pirqa1.jpg?alt=media&token=252681a3-87bd-4372-94b1-0abe59a21e52",
-          "title": "pirqa1"
-        },
-        {
-          "url": "https://firebasestorage.googleapis.com/v0/b/fir-dataapp-c6043.appspot.com/o/pirqa2.jpg?alt=media&token=5941c8f6-b325-4b40-88a3-bf0087699384",
-          "title": "pirqa2"
-        },
-        {
-          "url": "https://firebasestorage.googleapis.com/v0/b/fir-dataapp-c6043.appspot.com/o/pirqa3.jpg?alt=media&token=a0b7cc53-abc5-4e7c-a976-a4d96eb60ea7",
-          "title": "pirqa3"
-        }
-      ]
+      "url_photo": "https://firebasestorage.googleapis.com/v0/b/fir-dataapp-c6043.appspot.com/o/pirqa.png?alt=media&token=2a189aea-639e-4ab5-a471-fc5e6c5c999b",
+      "alt": "Pirqa"
+    },
+    {
+      "climbingGymId": 1,
+      "url_photo": "https://firebasestorage.googleapis.com/v0/b/fir-dataapp-c6043.appspot.com/o/pirqa1.jpg?alt=media&token=252681a3-87bd-4372-94b1-0abe59a21e52",
+      "alt": "Pirqa"
+    },
+    {
+      "climbingGymId": 1,
+      "url_photo": "https://firebasestorage.googleapis.com/v0/b/fir-dataapp-c6043.appspot.com/o/pirqa2.jpg?alt=media&token=5941c8f6-b325-4b40-88a3-bf0087699384",
+      "alt": "Pirqa"
+    },
+    {
+      "climbingGymId": 1,
+      "url_photo": "https://firebasestorage.googleapis.com/v0/b/fir-dataapp-c6043.appspot.com/o/pirqa3.jpg?alt=media&token=a0b7cc53-abc5-4e7c-a976-a4d96eb60ea7",
+      "alt": "Pirqa"
     }
   ]
 }
