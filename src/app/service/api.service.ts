@@ -1,17 +1,36 @@
+import { ClimbingGym } from './ClimbingGym';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Features } from './Features';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
   basePath = 'http://localhost:3000/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   // Get all climbing gyms
 
   getAllClimbingGyms() {
     return this.http.get(this.basePath + 'climbingGyms');
   }
+
+  getClimbingGymData(id: number) {
+    return this.http.get<ClimbingGym>(this.basePath + `climbingGyms/${id}`);
+  }
+
+  getClimbingGymFeatures(id: number) {
+    return this.http.get<Features[]>(
+      this.basePath + `features?climbingGymId=${id}`
+    );
+  }
+
+  //http://localhost:3000/images?climbingGymId=1
+  /*
+  getClimbingGymData(id: number) {
+    return this.http.get<ClimbingGym>(this.basePath + 'climbingGyms/' + id);
+  }
+*/
 }

@@ -17,13 +17,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSortModule } from '@angular/material/sort';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ClimbingGymDetailsComponent,
-    HomeComponent
-  ],
+  declarations: [AppComponent, ClimbingGymDetailsComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -38,9 +35,10 @@ import { HomeComponent } from './components/home/home.component';
     MatInputModule,
     MatSelectModule,
     MatSortModule,
-    FormsModule
+    FormsModule,
+    MatTabsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
