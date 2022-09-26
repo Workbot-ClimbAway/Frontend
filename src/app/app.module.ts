@@ -18,9 +18,11 @@ import { MatSortModule } from '@angular/material/sort';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { ClimbingGymDetailsComponentPipeComponent } from './components/climbing-gym-details/pipe/climbing-gym-details-component-pipe/climbing-gym-details-component-pipe.component';
 
 @NgModule({
-  declarations: [AppComponent, ClimbingGymDetailsComponent, HomeComponent],
+  declarations: [AppComponent, ClimbingGymDetailsComponent, HomeComponent, ClimbingGymDetailsComponentPipeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -37,6 +39,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatSortModule,
     FormsModule,
     MatTabsModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -2,6 +2,8 @@ import { ClimbingGym } from './ClimbingGym';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Features } from './Features';
+import { Images } from './Images';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -28,9 +30,9 @@ export class ApiService {
   }
 
   //http://localhost:3000/images?climbingGymId=1
-  /*
-  getClimbingGymData(id: number) {
-    return this.http.get<ClimbingGym>(this.basePath + 'climbingGyms/' + id);
+  getClimbingGymImages(id: number) {
+    return this.http.get<Images[]>(
+      this.basePath + `images?climbingGymId=${id}`
+    );
   }
-*/
 }

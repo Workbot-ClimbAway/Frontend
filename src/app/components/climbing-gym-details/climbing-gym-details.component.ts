@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/service/api.service';
 import { ClimbingGym } from 'src/app/service/ClimbingGym';
 import { Features } from 'src/app/service/Features';
-import { HomeComponent } from '../home/home.component';
+import { Images } from 'src/app/service/Images';
 
 @Component({
   selector: 'app-climbing-gym-details',
@@ -14,9 +14,9 @@ export class ClimbingGymDetailsComponent implements OnInit {
   climbingGymData: ClimbingGym;
   climbingGymFeatures: Features[];
   climbingGymFeature: Features;
-
+  climbingGymImages: Images[];
+  images: any;
   id?: any = 0;
-
   homeId: number = 0;
 
   constructor(
@@ -27,17 +27,16 @@ export class ClimbingGymDetailsComponent implements OnInit {
     this.climbingGymData = {} as ClimbingGym;
     this.climbingGymFeatures = [] as Features[];
     this.climbingGymFeature = {} as Features;
+    this.climbingGymImages = [] as Images[];
+    this.images = {} as any;
   }
 
   ngOnInit(): void {
-    /*
     this.id = this.activeRouter.snapshot.paramMap.get('id');
-    console.log(this.id);
-    this.text = 'Climbing Gym Details ' + this.id;
-*/
+
     this.getData();
     this.getFeatures();
-    // console.log(this.homeComponent.id);
+    this.getImages();
   }
 
   getData() {
@@ -46,19 +45,29 @@ export class ClimbingGymDetailsComponent implements OnInit {
 
     this.api.getClimbingGymData(numIndex).subscribe((data: ClimbingGym) => {
       this.climbingGymData = { ...data };
-      console.log(data);
     });
   }
 
   getFeatures() {
-    var index = localStorage.getItem('agencyId');
-    var numIndex = Number(index);
-
-    this.api.getClimbingGymFeatures(numIndex).subscribe((data: Features[]) => {
+    this.api.getClimbingGymFeatures(this.id).subscribe((data: Features[]) => {
       this.climbingGymFeatures = { ...data };
       this.climbingGymFeature = {
-        ...this.climbingGymFeatures[numIndex - 1],
+        ...this.climbingGymFeatures[this.id - 1],
       };
+    });
+  }
+
+  getImages() {
+    this.api.getClimbingGymImages(this.id).subscribe((data: Images[]) => {
+      this.climbingGymImages = { ...data };
+
+      const arr = Object.values(this.climbingGymImages).filter((item) => {
+        return item.url_photo;
+      });
+
+      this.images = arr.map((item) => {
+        return item.url_photo;
+      });
     });
   }
 }
