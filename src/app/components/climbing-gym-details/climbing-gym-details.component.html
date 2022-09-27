@@ -1,2 +1,50 @@
+<<<<<<< HEAD
 <p>{{this.text}}</p>
 <button (click)="windows()">Click Me</button>
+=======
+<div>
+  <div>
+    <img src="{{ climbingGymData.logo_url }}" alt="" />
+    <h2></h2>
+    <mat-tab-group>
+      <mat-tab label="Gallery">
+        <mat-grid-list cols="2" rowHeight="2:1">
+          <mat-grid-tile *ngFor="let gymImages of images | objectToArray">
+            <img src="{{ gymImages }}" alt=""
+          /></mat-grid-tile>
+        </mat-grid-list>
+      </mat-tab>
+      <mat-tab label="Description">
+        <div>
+          <p>Entry price: S/.{{ climbingGymFeature.price }}</p>
+          <p>Rock price: {{ climbingGymFeature.rock_type }}</p>
+
+          <p>Number of routes: {{ climbingGymFeature.n_routes }}</p>
+          <p>Max height: {{ climbingGymFeature.max_height }} meters</p>
+          <p>
+            Bolting:
+            <span
+              *ngFor="
+                let bolting of climbingGymFeature.bolting;
+                last as Last;
+                index as Index
+              "
+            >
+              <span *ngIf="Index">,</span>
+              {{ bolting }}
+              <span *ngIf="Last">.</span>
+            </span>
+          </p>
+        </div></mat-tab
+      >
+      <mat-tab label="Office hours">
+        <div>
+          <p>Days of week: {{ climbingGymFeature.days_week }}</p>
+          <p>Hours: {{ climbingGymFeature.office_hours }}</p>
+        </div></mat-tab
+      >
+      <mat-tab label="Comments"> <p>Making this functionality :)</p> </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+>>>>>>> 488a3a3d02036876b663333e7d57cc7f7fdd4504
