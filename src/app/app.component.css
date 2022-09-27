@@ -8,3 +8,8 @@
 .container-button button{
      box-shadow: none; 
 }
+
+.navbar{
+    width: 100%;
+    height: 7vh;
+}
