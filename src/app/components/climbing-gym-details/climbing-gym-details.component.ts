@@ -15,6 +15,7 @@ export class ClimbingGymDetailsComponent implements OnInit {
   climbingGymFeatures: Features[];
   climbingGymFeature: Features;
   climbingGymImages: Images[];
+  climbingGymNew_news: any;
   images: any;
   id?: any = 0;
   homeId: number = 0;
@@ -37,6 +38,7 @@ export class ClimbingGymDetailsComponent implements OnInit {
     this.getData();
     this.getFeatures();
     this.getImages();
+    this.getNew_news();
   }
 
   getData() {
@@ -70,4 +72,11 @@ export class ClimbingGymDetailsComponent implements OnInit {
       });
     });
   }
+
+    getNew_news(){
+      this.api.getClimbingGymNew_news(this.id).subscribe({next: res=>{
+        this.climbingGymNew_news=res;
+      }});
+    }
+
 }
