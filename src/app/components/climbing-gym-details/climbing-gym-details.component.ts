@@ -19,6 +19,10 @@ export class ClimbingGymDetailsComponent implements OnInit {
     this.text = "Climbing Gym Details " + this.id;
   }
 
+  windows(){
+    alert("Windows is :" + this.id);
+  }
+
   
 
 }
