@@ -4,62 +4,89 @@
 
     <mat-card class="div_img_new" *ngFor="let data of climbingGymNew_news">
       <mat-card-header>
-        <mat-card-title>{{data.title }}</mat-card-title>
-        <mat-card-subtitle>{{data.date }}</mat-card-subtitle>
+        <mat-card-title>{{ data.title }}</mat-card-title>
+        <mat-card-subtitle>{{ data.date }}</mat-card-subtitle>
       </mat-card-header>
-      <img class="img-new" mat-card-image src="{{data.url_photo}}" alt="Photo of a Shiba Inu">
+      <img
+        class="img-new"
+        mat-card-image
+        src="{{ data.url_photo }}"
+        alt="Photo of a Shiba Inu"
+      />
       <mat-card-content>
-        <p style="color:black;">
-         {{data.description}}
+        <p style="color: black">
+          {{ data.description }}
         </p>
       </mat-card-content>
     </mat-card>
-
   </div>
-      <div class="seccion2">
-       <img src="{{ climbingGymData.logo_url }}" alt="" />
-    <h2></h2>
-    <mat-tab-group>
+  <div class="seccion2">
+    <div class="seccion2_profile">
+      <div class="img_logo">
+        <img src="{{ climbingGymData.logo_url }}" alt="" />
+      </div>
+      <h2>{{ climbingGymData.name }}</h2>
+    </div>
+    <mat-tab-group mat-align-tabs="center">
       <mat-tab label="Gallery">
-        <mat-grid-list cols="2" rowHeight="2:1">
+        <mat-grid-list class="space" cols="2" rowHeight="2:1">
           <mat-grid-tile *ngFor="let gymImages of images | objectToArray">
             <img src="{{ gymImages }}" alt=""
           /></mat-grid-tile>
         </mat-grid-list>
       </mat-tab>
       <mat-tab label="Description">
-        <div>
-          <p>Entry price: S/.{{ climbingGymFeature.price }}</p>
-          <p>Rock price: {{ climbingGymFeature.rock_type }}</p>
-
-          <p>Number of routes: {{ climbingGymFeature.n_routes }}</p>
-          <p>Max height: {{ climbingGymFeature.max_height }} meters</p>
+        <div class="space">
           <p>
-            Bolting:
+            <span class="data">Entry price:</span> S/.{{
+              climbingGymFeature.price
+            }}
+          </p>
+          <p>
+            <span class="data">Rock price:</span>
+            {{ climbingGymFeature.rock_type }}
+          </p>
+
+          <p>
+            <span class="data">Number of routes:</span>
+            {{ climbingGymFeature.n_routes }}
+          </p>
+          <p>
+            <span class="data">Max height: </span
+            >{{ climbingGymFeature.max_height }} meters
+          </p>
+          <p>
+            <span class="data">Bolting: </span>
             <span
               *ngFor="
                 let bolting of climbingGymFeature.bolting;
                 last as Last;
                 index as Index
               "
+              ><span *ngIf="Index">,</span> {{ bolting
+              }}<span *ngIf="Last">.</span></span
             >
-              <span *ngIf="Index">,</span>
-              {{ bolting }}
-              <span *ngIf="Last">.</span>
-            </span>
           </p>
         </div></mat-tab
       >
       <mat-tab label="Office hours">
-        <div>
-          <p>Days of week: {{ climbingGymFeature.days_week }}</p>
-          <p>Hours: {{ climbingGymFeature.office_hours }}</p>
+        <div class="space">
+          <p>
+            <span class="data">Days of week:</span>
+            {{ climbingGymFeature.days_week }}
+          </p>
+          <p>
+            <span class="data">Hours:</span>
+            {{ climbingGymFeature.office_hours }}
+          </p>
         </div></mat-tab
       >
-      <mat-tab label="Comments"> <p>Making this functionality :)</p> </mat-tab>
+      <mat-tab label="Comments">
+        <div class="space">
+          <p>Making this functionality :)</p>
+        </div>
+      </mat-tab>
     </mat-tab-group>
   </div>
-  <div class="seccion3">
-
-  </div>
+  <div class="seccion3"></div>
 </div>

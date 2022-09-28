@@ -42,10 +42,7 @@ export class ClimbingGymDetailsComponent implements OnInit {
   }
 
   getData() {
-    var index = localStorage.getItem('agencyId');
-    var numIndex = Number(index);
-
-    this.api.getClimbingGymData(numIndex).subscribe((data: ClimbingGym) => {
+    this.api.getClimbingGymData(this.id).subscribe((data: ClimbingGym) => {
       this.climbingGymData = { ...data };
     });
   }
