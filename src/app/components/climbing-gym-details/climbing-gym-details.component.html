@@ -7,12 +7,7 @@
         <mat-card-title>{{ data.title }}</mat-card-title>
         <mat-card-subtitle>{{ data.date }}</mat-card-subtitle>
       </mat-card-header>
-      <img
-        class="img-new"
-        mat-card-image
-        src="{{ data.url_photo }}"
-        alt="Photo of a Shiba Inu"
-      />
+      <img class="img-new" mat-card-image src="{{ data.url_photo }}" alt="Photo of a Shiba Inu" />
       <mat-card-content>
         <p style="color: black">
           {{ data.description }}
@@ -23,24 +18,23 @@
   <div class="seccion2">
     <div class="seccion2_profile">
       <div class="img_logo">
-        <img src="{{ climbingGymData.logo_url }}" alt="" />
+        <img src="{{ this.climbingGym.logo_url }}" alt="" />
       </div>
-      <h2>{{ climbingGymData.name }}</h2>
+      <h2>{{ climbingGym.name }}</h2>
     </div>
     <mat-tab-group mat-align-tabs="center">
       <mat-tab label="Gallery">
         <mat-grid-list class="space" cols="2" rowHeight="2:1">
-          <mat-grid-tile *ngFor="let gymImages of images | objectToArray">
-            <img src="{{ gymImages }}" alt=""
-          /></mat-grid-tile>
+          <mat-grid-tile *ngFor="let gymImages of climbingGymImages">
+            <img src="{{ gymImages.url_photo }}" alt="" />
+          </mat-grid-tile>
         </mat-grid-list>
       </mat-tab>
       <mat-tab label="Description">
         <div class="space">
           <p>
-            <span class="data">Entry price:</span> S/.{{
-              climbingGymFeature.price
-            }}
+            <span class="data">Entry price:</span> S/.
+            {{this.climbingGymFeature.price}}
           </p>
           <p>
             <span class="data">Rock price:</span>
@@ -52,23 +46,19 @@
             {{ climbingGymFeature.n_routes }}
           </p>
           <p>
-            <span class="data">Max height: </span
-            >{{ climbingGymFeature.max_height }} meters
+            <span class="data">Max height: </span>{{ climbingGymFeature.max_height }} meters
           </p>
           <p>
             <span class="data">Bolting: </span>
-            <span
-              *ngFor="
+            <span *ngFor="
                 let bolting of climbingGymFeature.bolting;
                 last as Last;
                 index as Index
-              "
-              ><span *ngIf="Index">,</span> {{ bolting
-              }}<span *ngIf="Last">.</span></span
-            >
+              "><span *ngIf="Index">,</span> {{ bolting
+              }}<span *ngIf="Last">.</span></span>
           </p>
-        </div></mat-tab
-      >
+        </div>
+      </mat-tab>
       <mat-tab label="Office hours">
         <div class="space">
           <p>
@@ -79,8 +69,8 @@
             <span class="data">Hours:</span>
             {{ climbingGymFeature.office_hours }}
           </p>
-        </div></mat-tab
-      >
+        </div>
+      </mat-tab>
       <mat-tab label="Comments">
         <div class="space">
           <p>Making this functionality :)</p>
@@ -88,49 +78,56 @@
       </mat-tab>
     </mat-tab-group>
   </div>
-  <div class="seccion3">
-    <h1 class="title_new">Ranking Section</h1>
-    <h4>Basic mat-select</h4>
-    <mat-form-field appearance="fill">
-      <mat-label>Competitions</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let data of " []="">
-          {{food.viewValue}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <div class="seccion3" style="display: flex; justify-content: center;">
+   
+   
+    <div style="width: 80%; ">
+      <h1 class="title_new">Rankings Section</h1>
+      <mat-form-field appearance="standard">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+      </mat-form-field>
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-  
-    <!-- Position Column -->
-    <ng-container matColumnDef="photo">
-      <th mat-header-cell *matHeaderCellDef> Photo </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-    </ng-container>
-  
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-  
-    <!-- Weight Column -->
-    <ng-container matColumnDef="district">
-      <th mat-header-cell *matHeaderCellDef> District </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-    </ng-container>
-  
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="score">
-      <th mat-header-cell *matHeaderCellDef> Score </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-    </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-  
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+          <!-- Progress Column -->
+          <ng-container matColumnDef="photo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Photo </th>
+            <td mat-cell *matCellDef="let row">
+              <img src="{{row.url_photo}}" alt="" style=" margin-top:10px ; width: 50px; height: 50px; border-radius: 30px;" />
+            </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.fullName}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="district">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> District </th>
+            <td mat-cell *matCellDef="let row"> {{row.district}} </td>
+          </ng-container>
+
+          <!-- Fruit Column -->
+          <ng-container matColumnDef="score">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Score </th>
+            <td mat-cell *matCellDef="let row"> {{row.score}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+          </tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+      </div>
+    </div>
   </div>
 </div>

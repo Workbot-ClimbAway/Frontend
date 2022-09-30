@@ -21,40 +21,43 @@ export class ApiService {
   }
 
   getClimbingGymData(id: number) {
-    return this.http.get<ClimbingGym>(this.basePath + `climbingGyms/${id}`);
+    return this.http.get<any>(this.basePath + `climbingGyms/${id}`);
   }
 
   getClimbingGymFeatures(id: number) {
-    return this.http.get<Features[]>(
+    return this.http.get<any>(
       this.basePath + `features?climbingGymId=${id}`
     );
   }
 
   //http://localhost:3000/images?climbingGymId=1
   getClimbingGymImages(id: number) {
-    return this.http.get<Images[]>(
+    return this.http.get<any>(
       this.basePath + `images?climbingGymId=${id}`
     );
   }
-
+/// News 
   getClimbingGymNew_news(id :number){
      return this.http.get<any>(
       this.basePath + `new_news?climbingGymId=${id}`
      );
   }
-  getCompetitionData(id :number){
-    return this.http.get<CompetitionGym>(
-     this.basePath + `competition_gyms=${id}`
+  // Competiton
+
+  getCompetitionByClimbingGymId(id :number){
+    return this.http.get<any>(
+      this.basePath+`competition_gyms?climbingGymId=${id}`
     );
  }
-  getScalersByCompetitionGymId(id:number){
+  getRankingCompetitionByCompetitionId(id:number){
     return this.http.get<any>(
-      this.basePath+`competition_gyms_ranking?scalerId=${id}`
+      this.basePath+`competition_gyms_ranking?competition_gymId=${id}`
     );
   }
-  getCompetitionRankingOfScalersByCompetitionGymId(competitionGymId: number, scalerId: number){
+  /// Scarlers 
+  getScarlersById(id:number){
     return this.http.get<any>(
-      this.basePath+`competition_gyms_ranking?competition_gymId=${competitionGymId}&scalerId=${scalerId}`
+      this.basePath+`scalers/${id}`
     );
   }
 }
