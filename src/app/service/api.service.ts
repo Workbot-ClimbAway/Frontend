@@ -41,4 +41,15 @@ export class ApiService {
       this.basePath + `new_news?climbingGymId=${id}`
      );
   }
+  getScalersByCompetitionGymId(id:number){
+    return this.http.get<any>(
+      this.basePath+`competition_gyms_ranking?scalerId=${id}`
+    );
+  }
+  getCompetitionRankingOfScalersByCompetitionGymId(competitionGymId: number, scalerId: number){
+    return this.http.get<any>(
+      this.basePath+`competition_gyms_ranking?competition_gymId=${competitionGymId}&scalerId=${scalerId}`
+    );
+  }
 }
+  

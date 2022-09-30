@@ -39,7 +39,7 @@ export class ClimbingGymDetailsComponent implements OnInit {
   images: any;
   id?: any = 0;
   homeId: number = 0;
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['photo', 'name', 'district', 'score'];
   dataSource = ELEMENT_DATA;
   constructor(
     private activeRouter: ActivatedRoute,
@@ -60,6 +60,8 @@ export class ClimbingGymDetailsComponent implements OnInit {
     this.getFeatures();
     this.getImages();
     this.getNew_news();
+    this.getScalersByCompetitionGym();
+    this.getCompetitionRankingOfScalersByCompetitionGym();
   }
 
   getData() {
@@ -97,19 +99,13 @@ export class ClimbingGymDetailsComponent implements OnInit {
       }});
     }
 
+    getScalersByCompetitionGym(){
+      this.api.getScalersByCompetitionGymId(this.id).subscribe({next: res2=>{this.getScalersByCompetitionGym=res2;}})
+    }
+    getCompetitionRankingOfScalersByCompetitionGym(){
+      this.api.getCompetitionRankingOfScalersByCompetitionGymId(this.id, this.id).subscribe({next: res3=>{
+        this.getCompetitionRankingOfScalersByCompetitionGym=res3;
+      }})
+    }
 }
 
-/*// Competition ranking of climbing gyms
-  findScaleRankingByCompetitionGymId(id) {
-    return http.get(`/competition-gym-rankings/${id}/scalers`);
-  }
-  findCompetitionRankingByCompetitionGymIdAndScalerId(competitionGymId, scalerId) {
-    return http.get(`/competition-gym-rankings?competitionGymId=${competitionGymId}&scalerId=${scalerId}`);
-  }
-  createRanking(competitionGymId, scalerId, data) {
-    return http.post(`/competition-gym-rankings?competitionId=${competitionGymId}&scalerId=${scalerId}`, data);
-  }
-
-  updateRanking(competitionGymId, scalerId, data) {
-    return http.put(`/competition-gym-rankings?comtempGymId=${competitionGymId}&scalerId=${scalerId}`, data);
-  }*/
