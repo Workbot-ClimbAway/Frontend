@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatGridListModule } from '@angular/material/grid-list';
+import {MatTableModule} from '@angular/material/table';
 import { ClimbingGymDetailsComponentPipeComponent } from './components/climbing-gym-details/pipe/climbing-gym-details-component-pipe/climbing-gym-details-component-pipe.component';
 
 @NgModule({
@@ -40,6 +41,7 @@ import { ClimbingGymDetailsComponentPipeComponent } from './components/climbing-
     FormsModule,
     MatTabsModule,
     MatGridListModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent],
