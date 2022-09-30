@@ -1,0 +1,65 @@
+<div class="loginContent">
+  <div class="loginContent__Title">
+    <h1><strong>Bienvenido a Top Way</strong></h1>
+    <h1><strong>INICIE SESIÓN</strong></h1>
+    <img src="assets/logo.png" alt="Logo" title="Logo" />
+  </div>
+
+  <form [formGroup]="registerForm" (ngSubmit)="sendForm()" class="loginContent__form">
+    <h3>INFORMACIÓN PERSONAL</h3>
+    <div>
+      <mat-form-field appearance="fill" class="loginContent__form__email">
+        <mat-label>Nombres y apellidos</mat-label>
+        <input matInput type="text" formControlName="name">
+        <p class="loginContent__form__warnings" *ngIf="registerForm.get('name')?.errors?.['required']">Este campo es obligatorio</p>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Distrito</mat-label>
+      <select matNativeControl required>
+        <option value="San_Borja">San Borja</option>
+        <option value="MNiraflores">Miraflores</option>
+        <option value="Los_Olivos">Los Olivos</option>
+        <option value="San_Miguel">San Miguel</option>
+        <option value="San_Juan_de_Lurigancho"> San Juan de Lurigancho</option>
+      </select>
+    </mat-form-field>
+
+    <br>
+    <h3>SEGURIDAD</h3>
+    <div>
+      <mat-form-field appearance="fill" class="loginContent__form__email">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email">
+        <p class="loginContent__form__warnings" *ngIf="registerForm.get('email')?.errors?.['required']">Este campo es obligatorio</p>
+        <p class="loginContent__form__warnings" *ngIf="registerForm.get('email')?.errors?.['email']">Este campo debe ser un correo con @</p>
+      </mat-form-field>
+    </div>
+
+    <div class="loginContent__form__password">
+      <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input matInput [type]="passwordType" formControlName="password">
+        <p class="loginContent__form__warnings" *ngIf="registerForm.get('password')?.errors?.['required']">Este campo es obligatorio</p>
+        <p class="loginContent__form__warnings" *ngIf="registerForm.get('password')?.errors?.['pattern']">Debe tener los caracteres de la (A-Z), (a-z) y (0-9)</p>
+        <p class="loginContent__form__warnings" *ngIf="registerForm.get('password')?.errors?.['minLength']">Debe tener por lo menos 5 caracteres</p>
+        <button matSuffix type="button" mat-icon-button>
+          <mat-icon (click)="togglePassword()">{{passwordShown ? 'visibility' : 'visibility_off'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="loginContent__form__terms">
+      <mat-checkbox formControlName="terms">Acepto los terminos y condiciones</mat-checkbox>
+    </div>
+
+    <br><br>
+
+    <div class="loginContent__form__end">
+      <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid">REGISTRARSE</button>
+      <p>Para continuar, deberá aceptar nuestra política de privacidad & terminos del servicio</p>
+    </div>
+  </form>
+</div>
+
