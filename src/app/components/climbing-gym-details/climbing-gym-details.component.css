@@ -88,3 +88,7 @@ p {
   width: 50%;
   height: 50%;
 }
+
+table {
+  width: 100%;
+}

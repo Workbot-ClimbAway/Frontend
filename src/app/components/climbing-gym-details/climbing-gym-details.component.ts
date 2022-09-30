@@ -4,7 +4,6 @@ import { ApiService } from 'src/app/service/api.service';
 import { ClimbingGym } from 'src/app/service/ClimbingGym';
 import { Features } from 'src/app/service/Features';
 import { Images } from 'src/app/service/Images';
-
 @Component({
   selector: 'app-climbing-gym-details',
   templateUrl: './climbing-gym-details.component.html',
@@ -16,10 +15,12 @@ export class ClimbingGymDetailsComponent implements OnInit {
   climbingGymFeature: Features;
   climbingGymImages: Images[];
   climbingGymNew_news: any;
+  competitionGymData: any;
   images: any;
   id?: any = 0;
   homeId: number = 0;
-
+  displayedColumns: string[] = ['photo', 'name', 'district', 'score'];
+  dataSource: any;
   constructor(
     private activeRouter: ActivatedRoute,
     private router: Router,
@@ -30,6 +31,7 @@ export class ClimbingGymDetailsComponent implements OnInit {
     this.climbingGymFeature = {} as Features;
     this.climbingGymImages = [] as Images[];
     this.images = {} as any;
+    this.competitionGymData= {} as any;
   }
 
   ngOnInit(): void {
@@ -39,6 +41,7 @@ export class ClimbingGymDetailsComponent implements OnInit {
     this.getFeatures();
     this.getImages();
     this.getNew_news();
+    this.getScalersByCompetitionGym();
   }
 
   getData() {
@@ -76,4 +79,17 @@ export class ClimbingGymDetailsComponent implements OnInit {
       }});
     }
 
+    getScalersByCompetitionGym(){
+      this.api.getScalersByCompetitionGymId(this.id).subscribe({next: res2=>{this.getScalersByCompetitionGym=res2;}})
+    }
+    getCompetitionRankingOfScalersByCompetitionGym(){
+      this.api.getCompetitionRankingOfScalersByCompetitionGymId(this.id, this.id).subscribe({next: res3=>{
+        this.getCompetitionRankingOfScalersByCompetitionGym=res3;
+      }})
+    }
+    getCompetitionData(){
+      this.api.getCompetitionData(this.id).subscribe((data: any) => {
+        this.competitionGymData = { ...data };
+      });
+}
 }
