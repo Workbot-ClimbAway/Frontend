@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Features } from './Features';
 import { Images } from './Images';
+import { CompetitionGym } from './CompetitionGym';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -41,6 +42,11 @@ export class ApiService {
       this.basePath + `new_news?climbingGymId=${id}`
      );
   }
+  getCompetitionData(id :number){
+    return this.http.get<CompetitionGym>(
+     this.basePath + `competition_gyms=${id}`
+    );
+ }
   getScalersByCompetitionGymId(id:number){
     return this.http.get<any>(
       this.basePath+`competition_gyms_ranking?scalerId=${id}`

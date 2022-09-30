@@ -90,6 +90,15 @@
   </div>
   <div class="seccion3">
     <h1 class="title_new">Ranking Section</h1>
+    <h4>Basic mat-select</h4>
+    <mat-form-field appearance="fill">
+      <mat-label>Competitions</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let data of " []="">
+          {{food.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
