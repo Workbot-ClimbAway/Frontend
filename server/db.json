@@ -1,0 +1,469 @@
+{
+  "climbingGyms": [
+    {
+      "id": 1,
+      "name": "Pirqa",
+      "email": "pirqa@gmail.com",
+      "password": "pirqa123",
+      "district": "Miraflores",
+      "address": "C. José Galvez 360, Miraflores 15074",
+      "phone": "957821898",
+      "logo_url": "https://firebasestorage.googleapis.com/v0/b/fir-dataapp-c6043.appspot.com/o/pirqa.png?alt=media&token=2a189aea-639e-4ab5-a471-fc5e6c5c999b",
+      "type": "Gym"
+    },
+    {
+      "id": 2,
+      "name": "Vertical",
+      "email": "vertical@gmail.com",
+      "password": "Vertical123",
+      "district": "Jesus Maria",
+      "address": "Jr. Nazca cuadra 6 s/n, Depor Plaza, Campo de Marte, Jesús María 15072",
+      "phone": "993387403",
+      "logo_url": "https://escaladavertical.com/wp-content/uploads/2021/12/Logo-Vertical-escalada.jpg",
+      "type": "Gym"
+    },
+    {
+      "id": 3,
+      "name": "Base Camp",
+      "email": "basecamp@gmail.com",
+      "password": "basecamp123",
+      "district": "San Borja",
+      "address": "Av Tomás Marsano 630, Surquillo 15048",
+      "phone": "981265252",
+      "logo_url": "https://pbs.twimg.com/profile_images/1610922913/basecampperu_400x400.jpg",
+      "type": "Gym"
+    },
+    {
+      "id": 4,
+      "name": "Bloque",
+      "email": "bloque@gmail.com",
+      "password": "bloque123",
+      "district": "San Isidro",
+      "address": "Av. Dos de Mayo 127, San Isidro 15046",
+      "phone": "987654345",
+      "logo_url": "https://firebasestorage.googleapis.com/v0/b/fir-dataapp-c6043.appspot.com/o/bloque.jpg?alt=media&token=defc9310-56c1-4d8a-894c-b6476b6d6c46",
+      "type": "Gym"
+    },
+    {
+      "id": 5,
+      "name": "El Boulder",
+      "email": "boulder@gmail.com",
+      "password": "boulder123",
+      "district": "Barranco",
+      "address": "Peru, Lima, Av. Pedro de Osma 135",
+      "phone": "993789045",
+      "logo_url": "https://firebasestorage.googleapis.com/v0/b/fir-dataapp-c6043.appspot.com/o/bloulder.jpg?alt=media&token=5ecb8dfb-66bb-4f0a-9c2c-131bedd71ecd",
+      "type": "Gym"
+    },
+    {
+      "id": 6,
+      "name": "L'Arc - Scouts",
+      "email": "scouts@gmail.com",
+      "password": "scouts123",
+      "district": "Miraflores",
+      "address": "Peru, Lima, Av. Arequipa 5140",
+      "phone": "993098456",
+      "logo_url": "https://firebasestorage.googleapis.com/v0/b/fir-dataapp-c6043.appspot.com/o/scouts.jpg?alt=media&token=ece3a79c-d1a8-438d-95b6-a3fdc748c00b",
+      "type": "Gym"
+    }
+  ],
+  "scalers": [
+    {
+      "id": 1,
+      "first_name": "Dana",
+      "last_name": "Lopez",
+      "email": "scaler1@gmail.com",
+      "password": "scaler123",
+      "district": "Miraflores",
+      "address": "C. José Galvez 360, Los recuerdos 1534",
+      "url_photo": "https://www.sportlife.es/uploads/static/sportlife/upload/images/gallery/5be1cfda0ce694de058b45d8/5be1d5220ee6945962349515-entrevistando-a-margo-hayes-escaladora-y-yoguini.jpg",
+      "phone": "957953764",
+      "type": "Scaler"
+    },
+    {
+      "id": 2,
+      "first_name": "Luis",
+      "last_name": "Perez",
+      "email": "luisperez@gmail.com",
+      "password": "luisperez123",
+      "district": "San Isidro",
+      "address": "C. José Galvez 360, San Isidro 15074",
+      "url_photo": "https://woguclimbing.com/wp-content/uploads/2018/12/Jonathan-Siegrist-foto-Arjan-De-Kock.jpg",
+      "phone": "957953764",
+      "type": "Scaler"
+    },
+    {
+      "id": 3,
+      "first_name": "Raul",
+      "last_name": "Ventura Robles",
+      "email": "u201714049@upc.edu.pe",
+      "password": "Raul123",
+      "district": "Miraflores",
+      "address": "Arequipa 123",
+      "url_photo": "https://static01.nyt.com/images/2021/10/27/fashion/00NeverTooLate-Climber1-print/merlin_195813327_86edfb46-c771-4e68-826b-70c131fb2352-superJumbo.jpg",
+      "phone": 987654321,
+      "type": "Scaler"
+    },
+    {
+      "id": 4,
+      "first_name": "Sho",
+      "last_name": "Lee",
+      "email": "miguelalfaro2017@gmail.com",
+      "password": "jkasdbfj",
+      "district": "San Borja",
+      "address": "Av arequipa 234",
+      "url_photo": "https://media.istockphoto.com/photos/rock-climber-clinging-to-a-cliff-picture-id527531592?k=20&m=527531592&s=612x612&w=0&h=TMVZolAwrV-embcTC5r_3tN_OqoKw1EsPgDsHmVJseo=",
+      "phone": 987567876,
+      "type": "Scaler"
+    },
+    {
+      "id": 5,
+      "first_name": "Luis",
+      "last_name": "Acosta",
+      "email": "luisacosta@gmail.com",
+      "password": "luis123",
+      "district": "Miraflores",
+      "address": "Av arequipa123",
+      "url_photo": "https://static.dw.com/image/58602802_303.jpg",
+      "phone": 987123456,
+      "type": "Scaler",
+      "status": false
+    }
+  ],
+  "notifications": [
+    {
+      "id": 1,
+      "scalerId": 2,
+      "message": "Would you like to join the gym?"
+    }
+  ],
+  "favorites": [
+    {
+      "id": 1,
+      "scalerId": 1,
+      "climbingGymId": 1
+    },
+    {
+      "id": 3,
+      "scalerId": 1,
+      "climbingGymId": 2
+    },
+    {
+      "id": 4,
+      "scalerId": 2,
+      "climbingGymId": 2
+    },
+    {
+      "id": 5,
+      "scalerId": 2,
+      "climbingGymId": 1
+    }
+  ],
+  "features": [
+    {
+      "climbingGymId": 1,
+      "description": "Join an unparalleled experience in a safe environment and surrounded by many people who are passionate about sports. At Pirqa, we dream of being the best promoters of sport climbing and we look forward to seeing what you can achieve by climbing.",
+      "type_climb": "Bouldering",
+      "office_hours": "9:00 - 18:00",
+      "days_week": "Lunes a Viernes",
+      "price": 30,
+      "n_routes": "10",
+      "max_height": "20",
+      "rock_type": "Siena",
+      "altitude": "2400",
+      "bolting": [
+        "sport climb",
+        "bouldering",
+        "Tradicional climbing"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Bouldering"
+    },
+    {
+      "id": 2,
+      "name": "Tradicional climbing"
+    },
+    {
+      "id": 3,
+      "name": "Sport climbing"
+    }
+  ],
+  "category_gyms": [
+    {
+      "climbingGymId": 1,
+      "categoryId": 1
+    },
+    {
+      "climbingGymId": 1,
+      "categoryId": 2
+    },
+    {
+      "climbingGymId": 2,
+      "categoryId": 1
+    },
+    {
+      "climbingGymId": 2,
+      "categoryId": 3
+    },
+    {
+      "climbingGymId": 3,
+      "categoryId": 1
+    },
+    {
+      "climbingGymId": 3,
+      "categoryId": 2
+    },
+    {
+      "climbingGymId": 3,
+      "categoryId": 3
+    },
+    {
+      "climbingGymId": 4,
+      "categoryId": 1
+    },
+    {
+      "climbingGymId": 4,
+      "categoryId": 2
+    }
+  ],
+  "new_news": [
+    {
+      "climbingGymId": 1,
+      "title": "New climber",
+      "description": "A girl with great talent in pirqa",
+      "url_photo": "https://static.wixstatic.com/media/5b17ca_389aff8dd20c4ef1ac4ac2da702cc917~mv2.jpg/v1/fill/w_763,h_1145,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/IMG_0770-10668-min.jpg",
+      "date": "2020-05-20"
+    },
+    {
+      "climbingGymId": 1,
+      "title": "Fantastic climber",
+      "description": "New milestone in Pirqa, boy breaks record",
+      "url_photo": "https://outdoorsmagazine.pe/wp-content/uploads/2020/02/Pirqaboulder_opt-1.jpg",
+      "date": "2020-05-20"
+    }
+  ],
+  "league": [
+    {
+      "climbingGymId": 1,
+      "scalerId": 1,
+      "id": 1,
+      "name": "Mandracula",
+      "description": "Liga de escaladores del ditrito de Miraflores",
+      "url_photo": "https://4.bp.blogspot.com/-IVzuj5WWCwE/WTlfMGCk10I/AAAAAAAAKhU/szrONM9Q0XEDjTKGQ3X1uiX_CKgEyeLHgCLcB/s1600/scaling-mountain.jpg",
+      "number_participants": "10"
+    },
+    {
+      "id": 2,
+      "scalerId": 2,
+      "climbingGymId": 1,
+      "name": "Pircario",
+      "description": "The best group",
+      "url_photo": "https://mejorconsalud.as.com/wp-content/uploads/2021/04/escalada-roca.jpg",
+      "number_participants": 3
+    }
+  ],
+  "requests": [
+    {
+      "id": 1,
+      "leagueId": 2,
+      "scalerId": 3,
+      "status": "Pending"
+    }
+  ],
+  "climbers_league": [
+    {
+      "id": 1,
+      "scalerId": 1,
+      "leagueId": 1,
+      "climbingGymId": 1
+    },
+    {
+      "id": 2,
+      "scalerId": 2,
+      "leagueId": 2,
+      "climbingGymId": 1
+    },
+    {
+      "id": 4,
+      "scalerId": 4,
+      "leagueId": 2,
+      "climbingGymId": 1
+    },
+    {
+      "id": 5,
+      "scalerId": 5,
+      "leagueId": 2,
+      "climbingGymId": 1
+    }
+  ],
+  "competitions_league": [
+    {
+      "id": 1,
+      "leagueId": 1,
+      "name": "Climbing Mountain",
+      "date": "2020-05-20",
+      "type": "Climbing",
+      "competitions_ranking": [
+        {
+          "id": 1,
+          "scalerId": 1,
+          "score": 10
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "leagueId": 2,
+      "name": "The best Competition",
+      "date": "2022-05-20T09:15:08.873Z",
+      "type": "Bouldering",
+      "competitions_ranking": [
+        {
+          "id": 0,
+          "scalerId": 2,
+          "score": 45
+        },
+        {
+          "id": 1,
+          "scalerId": 4,
+          "score": 35
+        },
+        {
+          "id": 2,
+          "scalerId": 5,
+          "score": 80
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "leagueId": 2,
+      "name": "Competition Example",
+      "date": "2022-05-20T11:21:04.426Z",
+      "type": "Bouldering",
+      "competitions_ranking": [
+        {
+          "id": 0,
+          "scalerId": 2,
+          "score": 20
+        },
+        {
+          "id": 1,
+          "scalerId": 4,
+          "score": 67
+        },
+        {
+          "id": 2,
+          "scalerId": 5,
+          "score": 38
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "leagueId": 2,
+      "name": "TheBestWin",
+      "date": "2022-05-20T17:08:13.496Z",
+      "type": "Tradicional climbing",
+      "competitions_ranking": [
+        {
+          "id": 0,
+          "scalerId": 2,
+          "score": 23
+        },
+        {
+          "id": 1,
+          "scalerId": 4,
+          "score": 45
+        },
+        {
+          "id": 2,
+          "scalerId": 5,
+          "score": 47
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "climbingGymId": 1,
+      "scalerId": 1,
+      "score": 4.5,
+      "comment": "I love this climbing gym <3",
+      "date": "2020-05-20"
+    },
+    {
+      "id": 2,
+      "climbingGymId": 1,
+      "scalerId": 2,
+      "score": 3.5,
+      "comment": "Good climbing gym",
+      "date": "2020-05-20"
+    }
+  ],
+  "competition_gyms": [
+    {
+      "id": 1,
+      "climbingGymId": 1,
+      "name": "Climbing Mountain",
+      "date": "2020-05-20",
+      "time": "10:00",
+      "type": "Climbing",
+      "price": 50
+    }
+  ],
+  "competition_reservation_climbers": [
+    {
+      "competition_gymId": 1,
+      "scalerId": 1,
+      "level": "B"
+    }
+  ],
+  "competition_gyms_ranking": [
+    {
+      "competition_gymId": 1,
+      "scalerId": 1,
+      "position": 1,
+      "score": 10
+    },
+    {
+      "competition_gymId": 1,
+      "scalerId": 2,
+      "position": 2,
+      "score": 8
+    },
+    {
+      "competition_gymId": 2,
+      "scalerId": 3,
+      "position": 3,
+      "score": 4
+    }
+  ],
+  "images": [
+    {
+      "climbingGymId": 1,
+      "url_photo": "https://firebasestorage.googleapis.com/v0/b/fir-dataapp-c6043.appspot.com/o/pirqa.png?alt=media&token=2a189aea-639e-4ab5-a471-fc5e6c5c999b",
+      "alt": "Pirqa"
+    },
+    {
+      "climbingGymId": 1,
+      "url_photo": "https://firebasestorage.googleapis.com/v0/b/fir-dataapp-c6043.appspot.com/o/pirqa1.jpg?alt=media&token=252681a3-87bd-4372-94b1-0abe59a21e52",
+      "alt": "Pirqa"
+    },
+    {
+      "climbingGymId": 1,
+      "url_photo": "https://firebasestorage.googleapis.com/v0/b/fir-dataapp-c6043.appspot.com/o/pirqa2.jpg?alt=media&token=5941c8f6-b325-4b40-88a3-bf0087699384",
+      "alt": "Pirqa"
+    },
+    {
+      "climbingGymId": 1,
+      "url_photo": "https://firebasestorage.googleapis.com/v0/b/fir-dataapp-c6043.appspot.com/o/pirqa3.jpg?alt=media&token=a0b7cc53-abc5-4e7c-a976-a4d96eb60ea7",
+      "alt": "Pirqa"
+    }
+  ]
+}
