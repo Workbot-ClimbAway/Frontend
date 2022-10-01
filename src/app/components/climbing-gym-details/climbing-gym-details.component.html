@@ -1,3 +1,45 @@
+<div class="section4">
+  <mat-toolbar style="background-color: rgb(248, 249, 250)">
+    <button
+      mat-stroked-button
+      style="
+        background-color: rgb(96, 146, 56);
+        margin-right: 10px;
+        color: white;
+      "
+    >
+      <mat-icon>star</mat-icon> My leagues
+    </button>
+    <button
+      mat-stroked-button
+      style="background-color: rgb(251, 192, 45); color: black"
+    >
+      <mat-icon>outlined_flag</mat-icon>
+      Competencies
+    </button>
+
+    <span class="example-spacer"></span>
+
+    <button
+      mat-stroked-button
+      style="background-color: rgb(33, 150, 243); color: white"
+    >
+      <mat-icon>add</mat-icon>
+      New league
+    </button>
+    <button
+      mat-stroked-button
+      style="
+        background-color: rgb(96, 125, 139);
+        color: white;
+        margin-left: 10px;
+      "
+    >
+      <mat-icon>subdirectory_arrow_right</mat-icon>
+      Join league
+    </button>
+  </mat-toolbar>
+</div>
 <div class="container">
   <div class="seccion1">
     <h1 class="title_new">News Section</h1>
@@ -7,7 +49,12 @@
         <mat-card-title>{{ data.title }}</mat-card-title>
         <mat-card-subtitle>{{ data.date }}</mat-card-subtitle>
       </mat-card-header>
-      <img class="img-new" mat-card-image src="{{ data.url_photo }}" alt="Photo of a Shiba Inu" />
+      <img
+        class="img-new"
+        mat-card-image
+        src="{{ data.url_photo }}"
+        alt="Photo of a Shiba Inu"
+      />
       <mat-card-content>
         <p style="color: black">
           {{ data.description }}
@@ -34,7 +81,7 @@
         <div class="space">
           <p>
             <span class="data">Entry price:</span> S/.
-            {{this.climbingGymFeature.price}}
+            {{ this.climbingGymFeature.price }}
           </p>
           <p>
             <span class="data">Rock price:</span>
@@ -46,16 +93,20 @@
             {{ climbingGymFeature.n_routes }}
           </p>
           <p>
-            <span class="data">Max height: </span>{{ climbingGymFeature.max_height }} meters
+            <span class="data">Max height: </span
+            >{{ climbingGymFeature.max_height }} meters
           </p>
           <p>
             <span class="data">Bolting: </span>
-            <span *ngFor="
+            <span
+              *ngFor="
                 let bolting of climbingGymFeature.bolting;
                 last as Last;
                 index as Index
-              "><span *ngIf="Index">,</span> {{ bolting
-              }}<span *ngIf="Last">.</span></span>
+              "
+              ><span *ngIf="Index">,</span> {{ bolting
+              }}<span *ngIf="Last">.</span></span
+            >
           </p>
         </div>
       </mat-tab>
@@ -78,55 +129,71 @@
       </mat-tab>
     </mat-tab-group>
   </div>
-  <div class="seccion3" style="display: flex; justify-content: center;">
-   
-   
-    <div style="width: 80%; ">
+  <div class="seccion3" style="display: flex; justify-content: center">
+    <div style="width: 80%">
       <h1 class="title_new">Rankings Section</h1>
       <mat-form-field appearance="standard">
         <mat-label>Filter</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+        <input
+          matInput
+          (keyup)="applyFilter($event)"
+          placeholder="Ex. Mia"
+          #input
+        />
       </mat-form-field>
 
       <div class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource" matSort>
-
           <!-- Progress Column -->
           <ng-container matColumnDef="photo">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Photo </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Photo</th>
             <td mat-cell *matCellDef="let row">
-              <img src="{{row.url_photo}}" alt="" style=" margin-top:10px ; width: 50px; height: 50px; border-radius: 30px;" />
+              <img
+                src="{{ row.url_photo }}"
+                alt=""
+                style="
+                  margin-top: 10px;
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 30px;
+                "
+              />
             </td>
           </ng-container>
 
           <!-- Name Column -->
           <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-            <td mat-cell *matCellDef="let row"> {{row.fullName}} </td>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+            <td mat-cell *matCellDef="let row">{{ row.fullName }}</td>
           </ng-container>
 
           <!-- Name Column -->
           <ng-container matColumnDef="district">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> District </th>
-            <td mat-cell *matCellDef="let row"> {{row.district}} </td>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>District</th>
+            <td mat-cell *matCellDef="let row">{{ row.district }}</td>
           </ng-container>
 
           <!-- Fruit Column -->
           <ng-container matColumnDef="score">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Score </th>
-            <td mat-cell *matCellDef="let row"> {{row.score}} </td>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Score</th>
+            <td mat-cell *matCellDef="let row">{{ row.score }}</td>
           </ng-container>
 
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 
           <!-- Row shown when there is no matching data. -->
           <tr class="mat-row" *matNoDataRow>
-            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            <td class="mat-cell" colspan="4">
+              No data matching the filter "{{ input.value }}"
+            </td>
           </tr>
         </table>
 
-        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        <mat-paginator
+          [pageSizeOptions]="[5, 10, 25, 100]"
+          aria-label="Select page of users"
+        ></mat-paginator>
       </div>
     </div>
   </div>

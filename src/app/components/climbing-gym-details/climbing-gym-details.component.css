@@ -2,6 +2,10 @@ p {
   color: #8a919a;
 }
 
+.example-spacer {
+  flex: 1 1 auto;
+}
+
 .example-card {
   max-width: 400px;
 }
