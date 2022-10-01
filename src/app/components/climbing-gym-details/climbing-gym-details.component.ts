@@ -4,9 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/service/api.service';
-import { ClimbingGym } from 'src/app/service/ClimbingGym';
-import { Features } from 'src/app/service/Features';
-import { Images } from 'src/app/service/Images';
+
 @Component({
   selector: 'app-climbing-gym-details',
   templateUrl: './climbing-gym-details.component.html',
@@ -23,7 +21,6 @@ export class ClimbingGymDetailsComponent implements OnInit {
   RankingByCompetition: any;
   // User 
   Scalers : any;
-
   dataSource! : MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!:MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;

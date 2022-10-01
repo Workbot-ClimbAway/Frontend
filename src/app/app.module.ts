@@ -18,14 +18,13 @@ import { MatTableModule } from '@angular/material/table';
 import { HomeComponent } from './components/home/home.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { ClimbingGymDetailsComponentPipeComponent } from './components/climbing-gym-details/pipe/climbing-gym-details-component-pipe/climbing-gym-details-component-pipe.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { MatPaginatorModule } from '@angular/material/paginator';
-import {MatIconModule} from "@angular/material/icon";
-import {MatCheckboxModule} from "@angular/material/checkbox";
+import { MatIconModule } from "@angular/material/icon";
+import { MatCheckboxModule } from "@angular/material/checkbox";
 
 @NgModule({
-  declarations: [AppComponent, ClimbingGymDetailsComponent, HomeComponent, ClimbingGymDetailsComponentPipeComponent],
+  declarations: [AppComponent, ClimbingGymDetailsComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

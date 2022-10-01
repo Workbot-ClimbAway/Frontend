@@ -1,17 +1,11 @@
-import { ClimbingGym } from './ClimbingGym';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Features } from './Features';
-import { Images } from './Images';
-import { CompetitionGym } from './CompetitionGym';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
   basePath = 'http://localhost:3000/';
-
   constructor(private http: HttpClient) {}
 
   // Get all climbing gyms

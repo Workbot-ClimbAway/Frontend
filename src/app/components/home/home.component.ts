@@ -37,9 +37,6 @@ export class HomeComponent implements OnInit {
   }
 
   more(id: number) {
-    this.climbingGymDetails.homeId = id;
-    localStorage.setItem('agencyId', this.climbingGymDetails.homeId.toString());
-    console.log(this.climbingGymDetails.homeId); //Works
     this.router.navigate(['/climbing-gym-details', id]);
   }
 
