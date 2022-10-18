@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-newleague',
@@ -7,12 +7,24 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./newleague.component.css'],
 })
 export class NewleagueComponent implements OnInit {
+  leagueName = '';
+  urlPhoto = '';
+  description = '';
   name?: any = '';
   id?: any = 0;
-  constructor(private activeRouter: ActivatedRoute) {}
+  constructor(private activeRouter: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    this.id = this.activeRouter.snapshot.paramMap.get('name');
+    this.name = this.activeRouter.snapshot.paramMap.get('name');
     this.id = this.activeRouter.snapshot.paramMap.get('id');
+  }
+
+  /*
+  <!--:name/:id/my-leagues-->
+  <a [routerLink]="['/', name, id, 'my-leagues']">Create League</a>
+
+*/
+  myleague(name: string, id: number) {
+    this.router.navigate(['/', name, id, 'my-leagues']);
   }
 }

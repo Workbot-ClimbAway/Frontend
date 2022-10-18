@@ -23,9 +23,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from "@angular/material/icon";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { NewleagueComponent } from './components/newleague/newleague.component';
+import { MyleaguesComponent } from './components/myleagues/myleagues.component';
 
 @NgModule({
-  declarations: [AppComponent, ClimbingGymDetailsComponent, HomeComponent, NewleagueComponent],
+  declarations: [AppComponent, ClimbingGymDetailsComponent, HomeComponent, NewleagueComponent, MyleaguesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
