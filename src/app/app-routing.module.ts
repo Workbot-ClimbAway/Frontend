@@ -8,6 +8,7 @@ import {RegisterComponent} from "./components/register/register.component";
 
 import { MyleaguesComponent } from './components/myleagues/myleagues.component';
 import { NewleagueComponent } from './components/newleague/newleague.component';
+import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'climbing-gym-details/:id', component: ClimbingGymDetailsComponent },
   { path: 'newleague/:name/:id', component: NewleagueComponent },
   { path: ':name/:id/my-leagues', component: MyleaguesComponent },
+  {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
