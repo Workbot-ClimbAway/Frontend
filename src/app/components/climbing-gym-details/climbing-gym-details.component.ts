@@ -19,10 +19,10 @@ export class ClimbingGymDetailsComponent implements OnInit {
   // Competition
   CompetitionGym: any;
   RankingByCompetition: any;
-  // User 
-  Scalers : any;
-  dataSource! : MatTableDataSource<any>;
-  @ViewChild(MatPaginator) paginator!:MatPaginator;
+  // User
+  Scalers: any;
+  dataSource!: MatTableDataSource<any>;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   competitionGymData: any;
   images: any;
@@ -32,16 +32,16 @@ export class ClimbingGymDetailsComponent implements OnInit {
   constructor(
     private activeRouter: ActivatedRoute,
     private router: Router,
-    private api: ApiService,
+    private api: ApiService
   ) {
     this.climbingGym = null;
   }
-  
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
-    if(this.dataSource.paginator){
+    if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
   }
@@ -55,70 +55,88 @@ export class ClimbingGymDetailsComponent implements OnInit {
   }
 
   getData() {
-    this.api.getClimbingGymData(this.id).subscribe({ next: (res) =>{
+    this.api.getClimbingGymData(this.id).subscribe({
+      next: (res) => {
         this.climbingGym = res;
-      }, error: (err) => {
-          console.log(err)
-      }
-    })
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
   getFeatures() {
-    this.api.getClimbingGymFeatures(this.id).subscribe({ next: res =>{
-      this.climbingGymFeature=res[0];
-      },error: err => {
+    this.api.getClimbingGymFeatures(this.id).subscribe({
+      next: (res) => {
+        this.climbingGymFeature = res[0];
+      },
+      error: (err) => {
         console.log(err);
-      }
-    })
+      },
+    });
   }
 
   getImages() {
     this.api.getClimbingGymImages(this.id).subscribe({
-      next: (res) =>{
-        this.climbingGymImages = res
-      }, error: (err) => {
-          console.log(err);
-      }
-    })
+      next: (res) => {
+        this.climbingGymImages = res;
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 
-  getNew_news(){
-    this.api.getClimbingGymNew_news(this.id).subscribe({next: res=>{
-      this.climbingGymNew_news=res;
-    }});
+  getNew_news() {
+    this.api.getClimbingGymNew_news(this.id).subscribe({
+      next: (res) => {
+        this.climbingGymNew_news = res;
+      },
+    });
   }
 
-  getCompetition(){
+  getCompetition() {
     this.api.getCompetitionByClimbingGymId(this.id).subscribe({
-      next: (res) =>{
-        this.CompetitionGym = res
-        this.api.getRankingCompetitionByCompetitionId(this.CompetitionGym[0].id)
-        .subscribe({
-          next: (res) =>{
-            this.RankingByCompetition = res
-            this.RankingByCompetition.forEach( (element:any, index: number)  => {
-              this.api.getScarlersById(element.scalerId).subscribe({
-                next: (resH) =>{
-                  this.RankingByCompetition[index].fullName = resH.first_name+" "+resH.last_name
-                  this.RankingByCompetition[index].district = resH.district
-                  this.RankingByCompetition[index].url_photo = resH.url_photo
-                }, error: (errH) =>{
-
-                  console.log(errH);
+      next: (res) => {
+        this.CompetitionGym = res;
+        this.api
+          .getRankingCompetitionByCompetitionId(this.CompetitionGym[0].id)
+          .subscribe({
+            next: (res) => {
+              this.RankingByCompetition = res;
+              this.RankingByCompetition.forEach(
+                (element: any, index: number) => {
+                  this.api.getScarlersById(element.scalerId).subscribe({
+                    next: (resH) => {
+                      this.RankingByCompetition[index].fullName =
+                        resH.first_name + ' ' + resH.last_name;
+                      this.RankingByCompetition[index].district = resH.district;
+                      this.RankingByCompetition[index].url_photo =
+                        resH.url_photo;
+                    },
+                    error: (errH) => {
+                      console.log(errH);
+                    },
+                  });
                 }
-              })
-            });
-            this.dataSource = new MatTableDataSource(this.RankingByCompetition);
-            this.dataSource.paginator = this.paginator;
-            this.dataSource.sort = this.sort;
-            console.log("Aqiiiiiiii",this.RankingByCompetition);
-          }, error: (err) => {
-            console.log(err);
-          }
-        })
-      }, error: (err) =>{
-        console.log(err)
-      }
-    })
+              );
+              this.dataSource = new MatTableDataSource(
+                this.RankingByCompetition
+              );
+              this.dataSource.paginator = this.paginator;
+              this.dataSource.sort = this.sort;
+              console.log('Aqiiiiiiii', this.RankingByCompetition);
+            },
+            error: (err) => {
+              console.log(err);
+            },
+          });
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
-
+  newleague(id: number, name: string) {
+    this.router.navigate(['/newleague', name, id]);
+  }
 }

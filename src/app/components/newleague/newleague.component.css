@@ -1,0 +1,23 @@
+.example-form-field {
+  width: 100%;
+}
+
+/* Border */
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
+.create_button {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+}
+
+#section_newleague {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  width: 80%;
+}

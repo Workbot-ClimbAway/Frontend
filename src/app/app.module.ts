@@ -22,12 +22,19 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from "@angular/material/icon";
 import { MatCheckboxModule } from "@angular/material/checkbox";
+
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 
+import { NewleagueComponent } from './components/newleague/newleague.component';
+import { MyleaguesComponent } from './components/myleagues/myleagues.component';
+
+
 // @ts-ignore
 @NgModule({
-  declarations: [AppComponent, ClimbingGymDetailsComponent, HomeComponent, LoginComponent, RegisterComponent],
+
+  declarations: [AppComponent, ClimbingGymDetailsComponent, HomeComponent, NewleagueComponent, MyleaguesComponent, LoginComponent, RegisterComponent],
+
   imports: [
     BrowserModule,
     AppRoutingModule,

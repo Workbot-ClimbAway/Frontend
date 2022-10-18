@@ -1,0 +1,33 @@
+<mat-card id="section_newleague">
+  <h1>New League</h1>
+  <p>Enter your new league information</p>
+
+  <div class="inputs">
+    <mat-form-field appearance="outline">
+      <mat-label>League Name</mat-label>
+      <input matInput placeholder="" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Url Photo</mat-label>
+      <input matInput placeholder="" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Description (optional)</mat-label>
+      <input matInput placeholder="" />
+    </mat-form-field>
+  </div>
+
+  <mat-card-actions align="end">
+    <button
+      mat-button
+      style="margin-left: 8px"
+      mat-raised-button
+      color="primary"
+      (click)="myleague(name, id)"
+    >
+      Create League
+    </button>
+  </mat-card-actions>
+</mat-card>
