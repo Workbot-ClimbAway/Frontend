@@ -28,12 +28,13 @@ import { RegisterComponent } from './components/register/register.component';
 
 import { NewleagueComponent } from './components/newleague/newleague.component';
 import { MyleaguesComponent } from './components/myleagues/myleagues.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
 // @ts-ignore
 @NgModule({
 
-  declarations: [AppComponent, ClimbingGymDetailsComponent, HomeComponent, NewleagueComponent, MyleaguesComponent, LoginComponent, RegisterComponent],
+  declarations: [AppComponent, ClimbingGymDetailsComponent, HomeComponent, NewleagueComponent, MyleaguesComponent, LoginComponent, RegisterComponent, PageNotFoundComponent],
 
   imports: [
     BrowserModule,
