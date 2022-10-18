@@ -22,9 +22,10 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from "@angular/material/icon";
 import { MatCheckboxModule } from "@angular/material/checkbox";
+import { NewleagueComponent } from './components/newleague/newleague.component';
 
 @NgModule({
-  declarations: [AppComponent, ClimbingGymDetailsComponent, HomeComponent],
+  declarations: [AppComponent, ClimbingGymDetailsComponent, HomeComponent, NewleagueComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
