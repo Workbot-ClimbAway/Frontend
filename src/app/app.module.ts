@@ -22,9 +22,12 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from "@angular/material/icon";
 import { MatCheckboxModule } from "@angular/material/checkbox";
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
+// @ts-ignore
 @NgModule({
-  declarations: [AppComponent, ClimbingGymDetailsComponent, HomeComponent],
+  declarations: [AppComponent, ClimbingGymDetailsComponent, HomeComponent, LoginComponent, RegisterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -52,6 +55,6 @@ import { MatCheckboxModule } from "@angular/material/checkbox";
     MatPaginatorModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

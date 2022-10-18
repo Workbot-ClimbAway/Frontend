@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'ClimbAway';
   constructor(private router: Router) { }
-  
-  nextPage(){
-    this.router.navigate(['/home']);
+
+  nextPage(rute: String){
+    this.router.navigate([rute]);
   }
 }

@@ -28,6 +28,9 @@
   margin-top: 10px;
   color: white;
 }
+.loginContent__submit__text--cursor{
+  cursor: pointer;
+}
 mat-label{
   color: white;
 }
