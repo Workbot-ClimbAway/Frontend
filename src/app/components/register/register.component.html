@@ -5,7 +5,7 @@
     <img src="assets/logo.png" alt="Logo" title="Logo" />
   </div>
 
-  <form [formGroup]="registerForm" (ngSubmit)="sendForm()" class="loginContent__form">
+  <form [formGroup]="registerForm" (ngSubmit)="postUser()" class="loginContent__form">
     <h3>INFORMACIÓN PERSONAL</h3>
     <div>
       <mat-form-field appearance="fill" class="loginContent__form__email">
@@ -17,13 +17,7 @@
 
     <mat-form-field appearance="fill">
       <mat-label>Distrito</mat-label>
-      <select matNativeControl required>
-        <option value="San_Borja">San Borja</option>
-        <option value="MNiraflores">Miraflores</option>
-        <option value="Los_Olivos">Los Olivos</option>
-        <option value="San_Miguel">San Miguel</option>
-        <option value="San_Juan_de_Lurigancho"> San Juan de Lurigancho</option>
-      </select>
+      <input matInput type="text" formControlName="district">
     </mat-form-field>
 
     <br>

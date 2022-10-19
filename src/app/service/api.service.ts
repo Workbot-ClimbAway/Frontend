@@ -30,7 +30,7 @@ export class ApiService {
       this.basePath + `images?climbingGymId=${id}`
     );
   }
-/// News 
+/// News
   getClimbingGymNew_news(id :number){
      return this.http.get<any>(
       this.basePath + `new_news?climbingGymId=${id}`
@@ -48,11 +48,16 @@ export class ApiService {
       this.basePath+`competition_gyms_ranking?competition_gymId=${id}`
     );
   }
-  /// Scarlers 
+  /// Scarlers
   getScarlersById(id:number){
     return this.http.get<any>(
       this.basePath+`scalers/${id}`
     );
   }
+
+  //Users
+  postUser(data: any){
+    return this.http.post<any>(this.basePath + "users", data)
+  }
 }
-  
+
