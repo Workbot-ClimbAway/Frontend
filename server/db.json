@@ -1,34 +1,20 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Juan Perez",
-      "district": "San Miguel",
-      "email": "juanperez@gmail.com",
-      "password": "123"
-    },
-    {
-      "id": 2,
-      "name": "Alberto Gomez",
-      "district": "Callao",
-      "email": "albertogomez@gmail.com",
-      "password": "0123"
-    },
-    {
       "name": "Gomez A",
       "email": "Gomez@gmail.com",
       "password": "abc0123A",
       "terms": true,
       "district": "Miraflores",
-      "id": 3
+      "id": 1
     },
     {
-      "name": "HOLAA",
-      "email": "hola@gmail.com",
-      "password": "0123As",
+      "name": "Juan Perez",
+      "email": "JuanPerez@gmail.com",
+      "password": "Juan0123",
       "terms": true,
-      "district": "Callao",
-      "id": 4
+      "district": "Los Olivos",
+      "id": 2
     }
   ],
   "climbingGyms": [

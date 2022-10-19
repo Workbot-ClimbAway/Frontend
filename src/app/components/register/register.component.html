@@ -5,7 +5,7 @@
     <img src="assets/logo.png" alt="Logo" title="Logo" />
   </div>
 
-  <form [formGroup]="registerForm" (ngSubmit)="postUser()" class="loginContent__form">
+  <form [formGroup]="registerForm" (ngSubmit)="postUser('login')" class="loginContent__form">
     <h3>INFORMACIÓN PERSONAL</h3>
     <div>
       <mat-form-field appearance="fill" class="loginContent__form__email">
@@ -51,7 +51,7 @@
     <br><br>
 
     <div class="loginContent__form__end">
-      <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid">REGISTRARSE</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid" (click)="openDialogConfirm()">REGISTRARSE</button>
       <p>Para continuar, deberá aceptar nuestra política de privacidad & terminos del servicio</p>
     </div>
   </form>
