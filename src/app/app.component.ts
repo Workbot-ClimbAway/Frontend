@@ -13,4 +13,6 @@ export class AppComponent {
   nextPage(rute: String){
     this.router.navigate([rute]);
   }
+
+
 }

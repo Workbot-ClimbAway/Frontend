@@ -1,4 +1,22 @@
 {
+  "users": [
+    {
+      "name": "Gomez A",
+      "email": "Gomez@gmail.com",
+      "password": "abc0123A",
+      "terms": true,
+      "district": "Miraflores",
+      "id": 1
+    },
+    {
+      "name": "Juan Perez",
+      "email": "JuanPerez@gmail.com",
+      "password": "Juan0123",
+      "terms": true,
+      "district": "Los Olivos",
+      "id": 2
+    }
+  ],
   "climbingGyms": [
     {
       "id": 1,

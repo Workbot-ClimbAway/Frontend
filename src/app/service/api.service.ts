@@ -25,10 +25,10 @@ export class ApiService {
   getClimbingGymImages(id: number) {
     return this.http.get<any>(this.basePath + `images?climbingGymId=${id}`);
   }
-
   // News
   getClimbingGymNew_news(id: number) {
     return this.http.get<any>(this.basePath + `new_news?climbingGymId=${id}`);
+
   }
 
   // Competiton
