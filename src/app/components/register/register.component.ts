@@ -63,7 +63,7 @@ export class RegisterComponent implements OnInit {
 
   Next(){
     if(this.registerForm.valid){
-      if(this.registerForm.value.type == "scaler"){
+      if(this.registerForm.value.type == "Scaler"){
         this.formScalerValue = true;
         this.forRegister = false;
       }else{
