@@ -1,22 +1,4 @@
 {
-  "users": [
-    {
-      "name": "Gomez A",
-      "email": "Gomez@gmail.com",
-      "password": "abc0123A",
-      "terms": true,
-      "district": "Miraflores",
-      "id": 1
-    },
-    {
-      "name": "Juan Perez",
-      "email": "JuanPerez@gmail.com",
-      "password": "Juan0123",
-      "terms": true,
-      "district": "Los Olivos",
-      "id": 2
-    }
-  ],
   "climbingGyms": [
     {
       "id": 1,
@@ -74,15 +56,15 @@
       "type": "Gym"
     },
     {
-      "id": 6,
-      "name": "L'Arc - Scouts",
       "email": "scouts@gmail.com",
-      "password": "scouts123",
-      "district": "Miraflores",
+      "password": "scoutA123",
+      "type": "Gym",
+      "name": "L'Arc - Scouts",
+      "district": "San Miguel",
       "address": "Peru, Lima, Av. Arequipa 5140",
       "phone": "993098456",
       "logo_url": "https://firebasestorage.googleapis.com/v0/b/fir-dataapp-c6043.appspot.com/o/scouts.jpg?alt=media&token=ece3a79c-d1a8-438d-95b6-a3fdc748c00b",
-      "type": "Gym"
+      "id": 6
     }
   ],
   "scalers": [
@@ -146,6 +128,18 @@
       "phone": 987123456,
       "type": "Scaler",
       "status": false
+    },
+    {
+      "email": "Juan@gmail.com",
+      "password": "Admin123",
+      "type": "Scaler",
+      "first_name": "Juan Angel",
+      "last_name": "Alfaro Gonzales",
+      "district": "San isidro",
+      "address": "Calle las flores 242",
+      "url_photo": "https://www.redaccionmedica.com/images/destacados/-buscamos-la-recuperacion-completa-de-la-persona-con-depresion--7353.jpg",
+      "phone": "921567876",
+      "id": 6
     }
   ],
   "notifications": [
@@ -284,9 +278,12 @@
       "number_participants": 3
     },
     {
-      "leagueName": "Super League",
-      "urlPhoto": "https://media.istockphoto.com/photos/rock-climber-clinging-to-a-cliff-picture-id527531592?k=20&m=527531592&s=612x612&w=0&h=TMVZolAwrV-embcTC5r_3tN_OqoKw1EsPgDsHmVJseo=",
-      "description": "Super League",
+      "name": "Percurio",
+      "url_photo": "https://woguclimbing.com/wp-content/uploads/2018/12/Jonathan-Siegrist-foto-Arjan-De-Kock.jpg",
+      "description": "La mejor liga",
+      "scalerId": 1,
+      "climbingGymId": "1",
+      "number_participants": 1,
       "id": 3
     }
   ],

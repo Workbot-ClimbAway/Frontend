@@ -1,15 +1,45 @@
-.container-button{
+.container-button {
     width: 20%;
     margin-left: 2%;
-    display: flex;
-    justify-content: space-between ;
+    /* display: flex;
+    justify-content: space-between; */
 }
 
-.container-button button{
-     box-shadow: none; 
+.container-button button {
+    box-shadow: none;
+    margin-left: 5px;
+    margin-right: 5px;
+    /* border: 1px solid #f0f0f0; */
+}
+
+
+.info-login{
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-login-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-login-photo {
+    margin-right: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+}
+.toolbar{
+    width: 100%;
+    height: 10vh;
 }
 
 .navbar{
     width: 100%;
-    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

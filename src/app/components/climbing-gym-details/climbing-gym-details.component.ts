@@ -124,7 +124,6 @@ export class ClimbingGymDetailsComponent implements OnInit {
               );
               this.dataSource.paginator = this.paginator;
               this.dataSource.sort = this.sort;
-              console.log('Aqiiiiiiii', this.RankingByCompetition);
             },
             error: (err) => {
               console.log(err);
@@ -138,5 +137,9 @@ export class ClimbingGymDetailsComponent implements OnInit {
   }
   newleague(id: number, name: string) {
     this.router.navigate(['/newleague', name, id]);
+  }
+
+  joinLeague(id: number) {
+    this.router.navigate(['/join-league', id]);
   }
 }

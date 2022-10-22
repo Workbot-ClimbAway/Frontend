@@ -8,6 +8,7 @@ import {RegisterComponent} from "./components/register/register.component";
 
 import { MyleaguesComponent } from './components/myleagues/myleagues.component';
 import { NewleagueComponent } from './components/newleague/newleague.component';
+import { JoinLeagueComponent } from './components/join-league/join-league.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'climbing-gym-details/:id', component: ClimbingGymDetailsComponent },
+  { path: 'join-league/:id', component: JoinLeagueComponent },
   { path: 'newleague/:name/:id', component: NewleagueComponent },
   { path: ':name/:id/my-leagues', component: MyleaguesComponent },
 ];

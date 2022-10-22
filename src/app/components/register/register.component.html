@@ -1,59 +1,132 @@
-<div class="loginContent">
-  <div class="loginContent__Title">
-    <h1><strong>Bienvenido a Top Way</strong></h1>
-    <h1><strong>INICIE SESIÓN</strong></h1>
-    <img src="assets/logo.png" alt="Logo" title="Logo" />
-  </div>
-
-  <form [formGroup]="registerForm" (ngSubmit)="postUser('login')" class="loginContent__form">
-    <h3>INFORMACIÓN PERSONAL</h3>
-    <div>
-      <mat-form-field appearance="fill" class="loginContent__form__email">
-        <mat-label>Nombres y apellidos</mat-label>
-        <input matInput type="text" formControlName="name">
-        <p class="loginContent__form__warnings" *ngIf="registerForm.get('name')?.errors?.['required']">Este campo es obligatorio</p>
-      </mat-form-field>
-    </div>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Distrito</mat-label>
-      <input matInput type="text" formControlName="district">
-    </mat-form-field>
-
-    <br>
-    <h3>SEGURIDAD</h3>
-    <div>
-      <mat-form-field appearance="fill" class="loginContent__form__email">
+<h1 mat-dialog-title style="text-align: center; margin-top: 2%;">Register</h1>
+<div  *ngIf="forRegister" class="container">
+  <div class="container-form" mat-card-content>
+    <form [formGroup]="registerForm">
+      <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
-        <input matInput type="email" formControlName="email">
-        <p class="loginContent__form__warnings" *ngIf="registerForm.get('email')?.errors?.['required']">Este campo es obligatorio</p>
-        <p class="loginContent__form__warnings" *ngIf="registerForm.get('email')?.errors?.['email']">Este campo debe ser un correo con @</p>
+        <input formControlName="email" matInput placeholder="Email*">
+        <mat-error>
+          <strong>Invalid</strong> email 
+        </mat-error>
       </mat-form-field>
-    </div>
 
-    <div class="loginContent__form__password">
-      <mat-form-field appearance="fill">
-        <mat-label>Contraseña</mat-label>
-        <input matInput [type]="passwordType" formControlName="password">
-        <p class="loginContent__form__warnings" *ngIf="registerForm.get('password')?.errors?.['required']">Este campo es obligatorio</p>
-        <p class="loginContent__form__warnings" *ngIf="registerForm.get('password')?.errors?.['pattern']">Debe tener los caracteres de la (A-Z), (a-z) y (0-9)</p>
-        <p class="loginContent__form__warnings" *ngIf="registerForm.get('password')?.errors?.['minLength']">Debe tener por lo menos 5 caracteres</p>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input formControlName="password" matInput placeholder="Password" [type]="passwordType">
+        <mat-error>
+          Password must <strong>required</strong> more than 5 characters letters and numbers
+        </mat-error>
         <button matSuffix type="button" mat-icon-button>
           <mat-icon (click)="togglePassword()">{{passwordShown ? 'visibility' : 'visibility_off'}}</mat-icon>
         </button>
       </mat-form-field>
-    </div>
 
-    <div class="loginContent__form__terms">
-      <mat-checkbox formControlName="terms">Acepto los terminos y condiciones</mat-checkbox>
-    </div>
+      <mat-form-field appearance="outline">
+        <mat-label>Type of user</mat-label>
+        <mat-select formControlName="type" placeholder="choose a user">
+          <mat-option value="Scaler">Scaler</mat-option>
+          <mat-option value="Gym">Climbing wall</mat-option>
+        </mat-select>
+      </mat-form-field>
 
-    <br><br>
-
-    <div class="loginContent__form__end">
-      <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid" (click)="openDialogConfirm()">REGISTRARSE</button>
-      <p>Para continuar, deberá aceptar nuestra política de privacidad & terminos del servicio</p>
-    </div>
-  </form>
+    </form>
+  </div>
+  <div class="botton-form">
+    <button mat-raised-button color="primary" (click)="Next()">Next</button>
+  </div>
 </div>
+<!-- Scaler Data -->
+<div *ngIf="formScalerValue" class="container">
+  <div class="container-form" mat-card-content>
+    <form [formGroup]="scalerForm">
 
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input formControlName="first_name" matInput placeholder="First Name*">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Last name</mat-label>
+        <input formControlName="last_name" matInput placeholder="Last name*">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>District</mat-label>
+        <mat-select formControlName="district" placeholder="District*">
+          <mat-option value="San borja">San borja</mat-option>
+          <mat-option value="San isidro">San isidro</mat-option>
+          <mat-option value="San Juan de Lurigancho">San Juan de Lurigancho</mat-option>
+          <mat-option value="San Miguel">San Miguel</mat-option>
+          <mat-option value="Lince">Lince</mat-option>
+          <mat-option value="Jesús maría">Jesús maría</mat-option>
+          <mat-option value="La victoria">La victoria</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input formControlName="address" matInput placeholder="Address*">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Url Photo</mat-label>
+        <input formControlName="url_photo" matInput placeholder="Url Photo*">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input formControlName="phone" matInput placeholder="Phone*">
+      </mat-form-field>
+
+    </form>
+  </div>
+  <div class="botton-form">
+    <button mat-raised-button color="secondary" (click)="Back()">Back</button>
+    <button mat-raised-button color="primary" (click)="signUpScaler()">SingUp</button>
+  </div>
+</div>
+<!-- Climbing Gym Data -->
+<div *ngIf="formClimbingWallValue" class="container">
+  <div class="container-form" mat-card-content>
+    <form [formGroup]="climbingWallForm">
+
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input formControlName="name" matInput placeholder="Name*">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>District</mat-label>
+        <mat-select formControlName="district" placeholder="District*">
+          <mat-option value="San borja">San borja</mat-option>
+          <mat-option value="San isidro">San isidro</mat-option>
+          <mat-option value="San Juan de Lurigancho">San Juan de Lurigancho</mat-option>
+          <mat-option value="San Miguel">San Miguel</mat-option>
+          <mat-option value="Lince">Lince</mat-option>
+          <mat-option value="Jesús maría">Jesús maría</mat-option>
+          <mat-option value="La victoria">La victoria</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input formControlName="address" matInput placeholder="Address*">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input formControlName="phone" matInput placeholder="Phone*">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Url Logo</mat-label>
+        <input formControlName="logo_url" matInput placeholder="Url Logo*">
+      </mat-form-field>
+
+    </form>
+  </div>
+  <div class="botton-form">
+    <button mat-raised-button color="secondary" (click)="Back()">Back</button>
+    <button mat-raised-button color="primary" (click)="signUpClimbingGym()">SingUp</button>
+  </div>
+</div>

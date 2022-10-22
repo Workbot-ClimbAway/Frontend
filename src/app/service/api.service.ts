@@ -21,14 +21,17 @@ export class ApiService {
     return this.http.get<any>(this.basePath + `features?climbingGymId=${id}`);
   }
 
-  // http://localhost:3000/images?climbingGymId=1
   getClimbingGymImages(id: number) {
     return this.http.get<any>(this.basePath + `images?climbingGymId=${id}`);
   }
+
+  postClimbingGym(data: any) {
+    return this.http.post<any>(this.basePath + 'climbingGyms', data);
+  }
+
   // News
   getClimbingGymNew_news(id: number) {
     return this.http.get<any>(this.basePath + `new_news?climbingGymId=${id}`);
-
   }
 
   // Competiton
@@ -48,7 +51,24 @@ export class ApiService {
     return this.http.get<any>(this.basePath + `scalers/${id}`);
   }
 
+  getScalerByEmailAndPassword(email: string, password: string) {
+    return this.http.get<any>(
+      this.basePath + `scalers?email=${email}&password=${password}`
+    );
+  }
+
+  postScaler(data: any){
+    return this.http.post<any>(this.basePath + 'scalers', data);
+  }
+
+  // Leagues
   postLeague(data: any) {
     return this.http.post<any>(this.basePath + 'league', data);
+  }
+
+  getLeaguesByClimbingGymId(id: number) {
+    return this.http.get<any>(
+      this.basePath + `league?climbingGymId=${id}`
+    );
   }
 }
