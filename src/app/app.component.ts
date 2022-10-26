@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppService } from './app.service';
 import { SharedService } from './service/shared.service';
 
 @Component({
@@ -12,33 +13,42 @@ export class AppComponent {
   title = 'ClimbAway';
   user : any ;
   isLogged: boolean = false;
-  constructor(private router: Router, private sharedService: SharedService, private refresh:ChangeDetectorRef) { }
+  constructor(private router: Router, 
+    private sharedService: SharedService, 
+    private refresh:ChangeDetectorRef,
+    private change: AppService) { }
 
   ngOnInit(): void {
-    // this.user.url_photo = '';
-    // this.user.first_name = '';
-    // this.user.last_name = '';
-     setInterval(() => {
-      if(this.sharedService.getAddUsuario()){
-        this.isLogged = true;
-        this.getUser();
-       }else{
-          this.isLogged = false;
-       }
-      this.refresh.detectChanges();
-    }, 1000);
-   
+    this.changeHandler();
+    this.validateUserExist();
   }
 
   logout(){
     localStorage.removeItem('addUsuario');
-    this.router.navigate(['']);
+    this.router.navigate(['/login']);
+    this.change.changeHandler$.emit(true);
   }
 
   getUser(){
     this.user=this.sharedService.getAddUsuario();
     //alert(this.user.url_photo);
   }
+
+  changeHandler(){
+    this.change.changeHandler$.subscribe((data: any) => {
+      this.validateUserExist();
+    });
+  }
+
+  validateUserExist(){
+    if(this.sharedService.getAddUsuario()){
+      this.isLogged = true;
+      this.getUser();
+    }else{
+      this.isLogged = false;
+    }
+  }
+
   nextPage(rute: String){
     this.router.navigate([rute]);
   }

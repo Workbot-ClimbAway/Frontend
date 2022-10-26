@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import {Router} from "@angular/router";
+import { AppService } from 'src/app/app.service';
 import { ApiService } from 'src/app/service/api.service';
+import { SharedService } from 'src/app/service/shared.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +15,11 @@ export class LoginComponent implements OnInit {
   passwordType: string = 'password';
   passwordShown: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, public api: ApiService, private router: Router) {
+  constructor(private formBuilder: FormBuilder, 
+    public api: ApiService, 
+    private router: Router,
+    private change: AppService,
+    private sharedService: SharedService) {
     // Formulario de registro
     this.loginForm = this.formBuilder.group({
       email: new FormControl('',[Validators.required, Validators.email]),
@@ -38,6 +44,7 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.valid){
       this.api.getScalerByEmailAndPassword(this.loginForm.value.email, this.loginForm.value.password).subscribe((data: any) => {
         localStorage.setItem('addUsuario', JSON.stringify(data[0]));
+        this.change.changeHandler$.emit(true);
         this.loginForm.reset();
         alert('Bienvenido ' + data[0].first_name + ' ' + data[0].last_name);
         this.router.navigate(['']);

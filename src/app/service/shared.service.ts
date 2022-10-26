@@ -6,7 +6,7 @@ export class SharedService {
   constructor() {
   }
 
-  getAddUsuario() {
+  public getAddUsuario() {
     let userInfo =JSON.parse(localStorage.getItem('addUsuario')!);
     return userInfo;
   }
