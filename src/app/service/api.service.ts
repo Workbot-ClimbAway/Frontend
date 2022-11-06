@@ -37,14 +37,14 @@ export class ApiService {
     return this.http.get<any>(this.basePath + `news/climbingGym/${id}`);
   }
 
-  // Competiton
-  //-----------------------------------------------------------------------------------------
+  // Competition
+  //---------------------------------In process--------------------------------------------------------
   getCompetitionByClimbingGymId(id: number) {
     return this.http.get<any>(
       this.basePath + `competition_gyms?climbingGymId=${id}`
     );
   }
-  //-----------------------------------------------------------------------------------------
+  //----------------------------------In process-------------------------------------------------------
   getRankingCompetitionByCompetitionId(id: number) {
     return this.http.get<any>(
       this.basePath + `competition_gyms_ranking?competition_gymId=${id}`
