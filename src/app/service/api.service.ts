@@ -31,19 +31,20 @@ export class ApiService {
   }
 
   // News
-  //------------------------------------------------------------------------------------------
+  //-------------------------------------Works-----------------------------------------------------
   getClimbingGymNew_news(id: number) {
     //return this.http.get<any>(this.basePath + `new_news?climbingGymId=${id}`);
     return this.http.get<any>(this.basePath + `news/climbingGym/${id}`);
   }
 
   // Competiton
-
+  //-----------------------------------------------------------------------------------------
   getCompetitionByClimbingGymId(id: number) {
     return this.http.get<any>(
       this.basePath + `competition_gyms?climbingGymId=${id}`
     );
   }
+  //-----------------------------------------------------------------------------------------
   getRankingCompetitionByCompetitionId(id: number) {
     return this.http.get<any>(
       this.basePath + `competition_gyms_ranking?competition_gymId=${id}`
@@ -51,25 +52,29 @@ export class ApiService {
   }
 
   // Scarlers
+  //-----------------------------------------------------------------------------------------
   getScarlersById(id: number) {
     return this.http.get<any>(this.basePath + `scalers/${id}`);
   }
 
+  //-----------------------------------------------------------------------------------------
   getScalerByEmailAndPassword(email: string, password: string) {
     return this.http.get<any>(
       this.basePath + `scalers?email=${email}&password=${password}`
     );
   }
 
+  //-----------------------------------------------------------------------------------------
   postScaler(data: any) {
     return this.http.post<any>(this.basePath + 'scalers', data);
   }
 
   // Leagues
+  //-----------------------------------------------------------------------------------------
   postLeague(data: any) {
     return this.http.post<any>(this.basePath + 'league', data);
   }
-
+  //-----------------------------------------------------------------------------------------
   getLeaguesByClimbingGymId(id: number) {
     return this.http.get<any>(this.basePath + `league?climbingGymId=${id}`);
   }
