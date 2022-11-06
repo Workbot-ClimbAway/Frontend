@@ -52,15 +52,16 @@ export class ApiService {
   }
 
   // Scarlers
-  //-----------------------------------------------------------------------------------------
+  //--------------------------------In process for paginator---------------------------------------------------------
   getScarlersById(id: number) {
-    return this.http.get<any>(this.basePath + `scalers/${id}`);
+    return this.http.get<any>(this.basePath + `scaler/${id}`);
   }
 
-  //-----------------------------------------------------------------------------------------
+  //-------------------------------------WORKS----------------------------------------------------
+  //http://localhost:8080/api/v1/scaler/email/scaler1@gmail.com/password/scaler123
   getScalerByEmailAndPassword(email: string, password: string) {
     return this.http.get<any>(
-      this.basePath + `scalers?email=${email}&password=${password}`
+      this.basePath + `scaler/email/${email}/password/${password}`
     );
   }
 
