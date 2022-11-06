@@ -1,23 +1,29 @@
-<h1 mat-dialog-title style="text-align: center; margin-top: 2%;">Register</h1>
-<div  *ngIf="forRegister" class="container">
+<h1 mat-dialog-title style="text-align: center; margin-top: 2%">Register</h1>
+<div *ngIf="forRegister" class="container">
   <div class="container-form" mat-card-content>
     <form [formGroup]="registerForm">
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
-        <input formControlName="email" matInput placeholder="Email*">
-        <mat-error>
-          <strong>Invalid</strong> email 
-        </mat-error>
+        <input formControlName="email" matInput placeholder="Email*" />
+        <mat-error> <strong>Invalid</strong> email </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Password</mat-label>
-        <input formControlName="password" matInput placeholder="Password" [type]="passwordType">
+        <input
+          formControlName="password"
+          matInput
+          placeholder="Password"
+          [type]="passwordType"
+        />
         <mat-error>
-          Password must <strong>required</strong> more than 5 characters letters and numbers
+          Password must <strong>required</strong> more than 5 characters letters
+          and numbers
         </mat-error>
         <button matSuffix type="button" mat-icon-button>
-          <mat-icon (click)="togglePassword()">{{passwordShown ? 'visibility' : 'visibility_off'}}</mat-icon>
+          <mat-icon (click)="togglePassword()">{{
+            passwordShown ? "visibility" : "visibility_off"
+          }}</mat-icon>
         </button>
       </mat-form-field>
 
@@ -28,7 +34,6 @@
           <mat-option value="Gym">Climbing wall</mat-option>
         </mat-select>
       </mat-form-field>
-
     </form>
   </div>
   <div class="botton-form">
@@ -39,15 +44,14 @@
 <div *ngIf="formScalerValue" class="container">
   <div class="container-form" mat-card-content>
     <form [formGroup]="scalerForm">
-
       <mat-form-field appearance="outline">
         <mat-label>First Name</mat-label>
-        <input formControlName="first_name" matInput placeholder="First Name*">
+        <input formControlName="firstName" matInput placeholder="First Name*" />
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Last name</mat-label>
-        <input formControlName="last_name" matInput placeholder="Last name*">
+        <input formControlName="lastName" matInput placeholder="Last name*" />
       </mat-form-field>
 
       <mat-form-field appearance="outline">
@@ -55,7 +59,9 @@
         <mat-select formControlName="district" placeholder="District*">
           <mat-option value="San borja">San borja</mat-option>
           <mat-option value="San isidro">San isidro</mat-option>
-          <mat-option value="San Juan de Lurigancho">San Juan de Lurigancho</mat-option>
+          <mat-option value="San Juan de Lurigancho"
+            >San Juan de Lurigancho</mat-option
+          >
           <mat-option value="San Miguel">San Miguel</mat-option>
           <mat-option value="Lince">Lince</mat-option>
           <mat-option value="Jesús maría">Jesús maría</mat-option>
@@ -64,35 +70,40 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline">
+        <mat-label>City</mat-label>
+        <input formControlName="city" matInput placeholder="City*" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
         <mat-label>Address</mat-label>
-        <input formControlName="address" matInput placeholder="Address*">
+        <input formControlName="address" matInput placeholder="Address*" />
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Url Photo</mat-label>
-        <input formControlName="url_photo" matInput placeholder="Url Photo*">
+        <input formControlName="url_photo" matInput placeholder="Url Photo*" />
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Phone</mat-label>
-        <input formControlName="phone" matInput placeholder="Phone*">
+        <input formControlName="phone" matInput placeholder="Phone*" />
       </mat-form-field>
-
     </form>
   </div>
   <div class="botton-form">
     <button mat-raised-button color="secondary" (click)="Back()">Back</button>
-    <button mat-raised-button color="primary" (click)="signUpScaler()">SingUp</button>
+    <button mat-raised-button color="primary" (click)="signUpScaler()">
+      SingUp
+    </button>
   </div>
 </div>
 <!-- Climbing Gym Data -->
 <div *ngIf="formClimbingWallValue" class="container">
   <div class="container-form" mat-card-content>
     <form [formGroup]="climbingWallForm">
-
       <mat-form-field appearance="outline">
         <mat-label>Name</mat-label>
-        <input formControlName="name" matInput placeholder="Name*">
+        <input formControlName="name" matInput placeholder="Name*" />
       </mat-form-field>
 
       <mat-form-field appearance="outline">
@@ -100,7 +111,9 @@
         <mat-select formControlName="district" placeholder="District*">
           <mat-option value="San borja">San borja</mat-option>
           <mat-option value="San isidro">San isidro</mat-option>
-          <mat-option value="San Juan de Lurigancho">San Juan de Lurigancho</mat-option>
+          <mat-option value="San Juan de Lurigancho"
+            >San Juan de Lurigancho</mat-option
+          >
           <mat-option value="San Miguel">San Miguel</mat-option>
           <mat-option value="Lince">Lince</mat-option>
           <mat-option value="Jesús maría">Jesús maría</mat-option>
@@ -110,23 +123,24 @@
 
       <mat-form-field appearance="outline">
         <mat-label>Address</mat-label>
-        <input formControlName="address" matInput placeholder="Address*">
+        <input formControlName="address" matInput placeholder="Address*" />
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Phone</mat-label>
-        <input formControlName="phone" matInput placeholder="Phone*">
+        <input formControlName="phone" matInput placeholder="Phone*" />
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Url Logo</mat-label>
-        <input formControlName="logo_url" matInput placeholder="Url Logo*">
+        <input formControlName="url_photo" matInput placeholder="Url Logo*" />
       </mat-form-field>
-
     </form>
   </div>
   <div class="botton-form">
     <button mat-raised-button color="secondary" (click)="Back()">Back</button>
-    <button mat-raised-button color="primary" (click)="signUpClimbingGym()">SingUp</button>
+    <button mat-raised-button color="primary" (click)="signUpClimbingGym()">
+      SingUp
+    </button>
   </div>
 </div>

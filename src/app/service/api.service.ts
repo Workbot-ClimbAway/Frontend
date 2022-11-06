@@ -65,9 +65,9 @@ export class ApiService {
     );
   }
 
-  //-----------------------------------------------------------------------------------------
+  //---------------------------------------WORKS--------------------------------------------------
   postScaler(data: any) {
-    return this.http.post<any>(this.basePath + 'scalers', data);
+    return this.http.post<any>(this.basePath + 'scaler', data);
   }
 
   // Leagues

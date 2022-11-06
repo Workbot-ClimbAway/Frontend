@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit {
         )
         .subscribe(
           (data: any) => {
-            localStorage.setItem('addUsuario', JSON.stringify(data[0]));
+            localStorage.setItem('addUsuario', JSON.stringify(data));
             this.change.changeHandler$.emit(true);
             this.loginForm.reset();
             alert('Bienvenido ' + data.firstName + ' ' + data.lastName);
