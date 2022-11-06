@@ -29,7 +29,7 @@
       New league
     </button>
     <button
-    (click)="joinLeague(climbingGym.id)"
+      (click)="joinLeague(climbingGym.id)"
       mat-stroked-button
       style="
         background-color: rgb(96, 125, 139);
@@ -75,7 +75,7 @@
       <mat-tab label="Gallery">
         <mat-grid-list class="space" cols="2" rowHeight="2:1">
           <mat-grid-tile *ngFor="let gymImages of climbingGymImages">
-            <img src="{{ gymImages.url_photo }}" alt="" />
+            <img src="{{ gymImages.urlImage }}" alt="" />
           </mat-grid-tile>
         </mat-grid-list>
       </mat-tab>
@@ -92,7 +92,7 @@
 
           <p>
             <span class="data">Number of routes:</span>
-            {{ climbingGymFeature.n_routes }}
+            {{ climbingGymFeature.routes }}
           </p>
           <p>
             <span class="data">Max height: </span
@@ -100,15 +100,7 @@
           </p>
           <p>
             <span class="data">Bolting: </span>
-            <span
-              *ngFor="
-                let bolting of climbingGymFeature.bolting;
-                last as Last;
-                index as Index
-              "
-              ><span *ngIf="Index">,</span> {{ bolting
-              }}<span *ngIf="Last">.</span></span
-            >
+            <span>{{ climbingGymFeature.bolting }}</span>
           </p>
         </div>
       </mat-tab>
@@ -116,11 +108,12 @@
         <div class="space">
           <p>
             <span class="data">Days of week:</span>
-            {{ climbingGymFeature.days_week }}
+            {{ climbingGymFeature.days_of_week }}
           </p>
           <p>
             <span class="data">Hours:</span>
-            {{ climbingGymFeature.office_hours }}
+            {{ climbingGymFeature.start_office_hours }} -
+            {{ climbingGymFeature.end_office_hours }}
           </p>
         </div>
       </mat-tab>

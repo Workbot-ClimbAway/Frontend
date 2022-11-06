@@ -5,36 +5,40 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ApiService {
-  basePath = 'http://localhost:3000/';
+  basePath = 'http://localhost:8080/api/v1/';
   constructor(private http: HttpClient) {}
 
   // Get all climbing gyms
+  //---------------------------------------------Works---------------------------------------------
   getAllClimbingGyms() {
-    return this.http.get(this.basePath + 'climbingGyms');
+    return this.http.get(this.basePath + 'climbing-gyms');
   }
-
+  //---------------------------------------------Works---------------------------------------------
   getClimbingGymData(id: number) {
-    return this.http.get<any>(this.basePath + `climbingGyms/${id}`);
+    return this.http.get<any>(this.basePath + `climbing-gyms/${id}`);
   }
-
+  //---------------------------------Works---------------------------------------------------------
   getClimbingGymFeatures(id: number) {
     return this.http.get<any>(this.basePath + `features?climbingGymId=${id}`);
   }
-
+  //-------------------------------Works-----------------------------------------------------------
   getClimbingGymImages(id: number) {
     return this.http.get<any>(this.basePath + `images?climbingGymId=${id}`);
   }
-
+  //----------------------------------FALTAN CORS--------------------------------------------------------
   postClimbingGym(data: any) {
-    return this.http.post<any>(this.basePath + 'climbingGyms', data);
+    return this.http.post<any>(this.basePath + 'climbing-gyms', data);
   }
 
   // News
+  //------------------------------------------------------------------------------------------
   getClimbingGymNew_news(id: number) {
-    return this.http.get<any>(this.basePath + `new_news?climbingGymId=${id}`);
+    //return this.http.get<any>(this.basePath + `new_news?climbingGymId=${id}`);
+    return this.http.get<any>(this.basePath + `news/climbingGym/${id}`);
   }
 
   // Competiton
+
   getCompetitionByClimbingGymId(id: number) {
     return this.http.get<any>(
       this.basePath + `competition_gyms?climbingGymId=${id}`
@@ -57,7 +61,7 @@ export class ApiService {
     );
   }
 
-  postScaler(data: any){
+  postScaler(data: any) {
     return this.http.post<any>(this.basePath + 'scalers', data);
   }
 
@@ -67,8 +71,6 @@ export class ApiService {
   }
 
   getLeaguesByClimbingGymId(id: number) {
-    return this.http.get<any>(
-      this.basePath + `league?climbingGymId=${id}`
-    );
+    return this.http.get<any>(this.basePath + `league?climbingGymId=${id}`);
   }
 }
