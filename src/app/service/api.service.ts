@@ -76,7 +76,8 @@ export class ApiService {
     return this.http.post<any>(this.basePath + 'league', data);
   }
   //-----------------------------------------------------------------------------------------
+  //http://localhost:8080/api/v1/league/climbing-gym/1
   getLeaguesByClimbingGymId(id: number) {
-    return this.http.get<any>(this.basePath + `league?climbingGymId=${id}`);
+    return this.http.get<any>(this.basePath + `league/climbing-gym/${id}`);
   }
 }

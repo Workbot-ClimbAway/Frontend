@@ -1,15 +1,14 @@
- <div class="container">
-    <div class="card">
-      <mat-card class="example-card" *ngFor="let league of leagues">
-        <mat-card-header>
-          <mat-card-title>{{ league.name }}</mat-card-title>
-          <mat-card-subtitle>{{ league.description }}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="{{ league.url_photo }}" alt="Photo of a Shiba Inu" />
-        <mat-card-actions>
-          <button color="primary" mat-button>Send request</button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
+<div class="container">
+  <div class="card">
+    <mat-card class="example-card" *ngFor="let l of league">
+      <mat-card-header>
+        <mat-card-title>{{ l.name }}</mat-card-title>
+        <mat-card-subtitle>{{ l.description }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{ l.urlPhoto }}" alt="Photo of a Shiba Inu" />
+      <mat-card-actions>
+        <button color="primary" mat-button>Send request</button>
+      </mat-card-actions>
+    </mat-card>
   </div>
-  
+</div>

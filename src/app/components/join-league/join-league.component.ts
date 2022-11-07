@@ -5,24 +5,27 @@ import { ApiService } from 'src/app/service/api.service';
 @Component({
   selector: 'app-join-league',
   templateUrl: './join-league.component.html',
-  styleUrls: ['./join-league.component.css']
+  styleUrls: ['./join-league.component.css'],
 })
 export class JoinLeagueComponent implements OnInit {
-  leagues : any;
+  league: any;
   id?: any = 0;
-  constructor(private api: ApiService, private activeRouter: ActivatedRoute) { }
+  constructor(private api: ApiService, private activeRouter: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.id = this.activeRouter.snapshot.paramMap.get('id');
-    this.getLeagues();
+    this.getLeagues(this.id);
   }
 
-  getLeagues(){
-    this.api.getLeaguesByClimbingGymId(this.id).subscribe({next: (res) => {
-      this.leagues = res;
-    }, error: (err) => {
-      console.log(err);
-    }});
+  getLeagues(id: number) {
+    this.api.getLeaguesByClimbingGymId(id).subscribe({
+      next: (res) => {
+        this.league = res;
+        console.log(this.league);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
-
 }
