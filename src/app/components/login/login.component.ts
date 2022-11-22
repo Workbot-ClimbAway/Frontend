@@ -47,15 +47,21 @@ export class LoginComponent implements OnInit {
   }
 
   signIn() {
+    let token: {};
     if (this.loginForm.valid) {
-      this.api
+      console.log(this.loginForm.value);
+      this.api.login(this.loginForm.value).subscribe(
+        (res: any) => { 
+          console.log(res);
+          this.api
         .getScalerByEmailAndPassword(
           this.loginForm.value.email,
           this.loginForm.value.password
         )
         .subscribe(
           (data: any) => {
-            localStorage.setItem('addUsuario', JSON.stringify(data));
+            token = {...res, ...data};
+            localStorage.setItem('addUsuario', JSON.stringify(token));
             this.change.changeHandler$.emit(true);
             this.loginForm.reset();
             alert('Bienvenido ' + data.firstName + ' ' + data.lastName);
@@ -65,6 +71,7 @@ export class LoginComponent implements OnInit {
             alert('User or password incorrect');
           }
         );
+        });
     } else {
       alert('Please fill in all the fields');
     }

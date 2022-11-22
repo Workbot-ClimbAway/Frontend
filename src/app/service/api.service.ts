@@ -1,12 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { SharedService } from './shared.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
+  user : any ;
   basePath = 'https://climbaway.herokuapp.com/api/v1/';
-  constructor(private http: HttpClient) {}
+  //basePath = 'http://localhost:8080/api/v1/';
+  constructor(private http: HttpClient, private sharedService: SharedService) {
+    this.user=this.sharedService.getAddUsuario();
+  }
 
   // Get all climbing gyms
   //---------------------------------------------Works---------------------------------------------
@@ -40,14 +45,28 @@ export class ApiService {
   // Competition
   //---------------------------------In process--------------------------------------------------------
   getCompetitionByClimbingGymId(id: number) {
+    const headerRequest = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + this.user.token,
+      },
+    };
     return this.http.get<any>(
-      this.basePath + `competition_gyms?climbingGymId=${id}`
+      this.basePath + `competition_gyms?climbingGymId=${id}`,
+      headerRequest
     );
   }
   //----------------------------------In process-------------------------------------------------------
   getRankingCompetitionByCompetitionId(id: number) {
+    const headerRequest = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + this.user.token,
+      },
+    };
     return this.http.get<any>(
-      this.basePath + `competition_gyms_ranking?competition_gymId=${id}`
+      this.basePath + `competition_gyms_ranking?competition_gymId=${id}`,
+      headerRequest
     );
   }
 
@@ -57,14 +76,15 @@ export class ApiService {
     return this.http.get<any>(this.basePath + `scaler/${id}`);
   }
 
-  //-------------------------------------WORKS----------------------------------------------------
-  //http://localhost:8080/api/v1/scaler/email/scaler1@gmail.com/password/scaler123
+  //-------------------------------------Login----------------------------------------------------
   getScalerByEmailAndPassword(email: string, password: string) {
     return this.http.get<any>(
-      this.basePath + `scaler/email/${email}/password/${password}`
+      this.basePath + `scaler/email/${email}`
     );
   }
-
+  login(data: any) {
+    return this.http.post<any>(this.basePath + 'login', data);
+  }
   //---------------------------------------WORKS--------------------------------------------------
   postScaler(data: any) {
     return this.http.post<any>(this.basePath + 'scaler', data);
@@ -73,11 +93,23 @@ export class ApiService {
   // Leagues
   //-----------------------------------------------------------------------------------------
   postLeague(data: any) {
-    return this.http.post<any>(this.basePath + 'league', data);
+    const headerRequest = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + this.user.token,
+      },
+    };
+    return this.http.post<any>(this.basePath + 'league', data, headerRequest);
   }
   //-----------------------------------------------------------------------------------------
   //http://localhost:8080/api/v1/league/climbing-gym/1
   getLeaguesByClimbingGymId(id: number) {
-    return this.http.get<any>(this.basePath + `league/climbing-gym/${id}`);
+    const headerRequest = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + this.user.token,
+      },
+    };
+    return this.http.get<any>(this.basePath + `league/climbing-gym/${id}`,headerRequest);
   }
 }
