@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ApiService {
-  basePath = 'http://localhost:8080/api/v1/';
+  basePath = 'https://climbaway.herokuapp.com/api/v1/';
   constructor(private http: HttpClient) {}
 
   // Get all climbing gyms
