@@ -11,6 +11,9 @@ export class ApiService {
   //basePath = 'http://localhost:8080/api/v1/';
   constructor(private http: HttpClient, private sharedService: SharedService) {
     this.user=this.sharedService.getAddUsuario();
+    if(this.user==null){
+      this.user={};
+    }
   }
 
   // Get all climbing gyms
@@ -24,7 +27,7 @@ export class ApiService {
   }
   //---------------------------------Works---------------------------------------------------------
   getClimbingGymFeatures(id: number) {
-    return this.http.get<any>(this.basePath + `features?climbingGymId=${id}`);
+    return this.http.get<any>(this.basePath + `features/${id}`);
   }
   //-------------------------------Works-----------------------------------------------------------
   getClimbingGymImages(id: number) {

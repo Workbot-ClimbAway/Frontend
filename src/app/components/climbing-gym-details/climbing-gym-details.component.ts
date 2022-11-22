@@ -67,7 +67,9 @@ export class ClimbingGymDetailsComponent implements OnInit {
   getFeatures() {
     this.api.getClimbingGymFeatures(this.id).subscribe({
       next: (res) => {
-        this.climbingGymFeature = res[0];
+        console.log(res);
+        this.climbingGymFeature = res;
+        console.log(this.climbingGymFeature);
       },
       error: (err) => {
         console.log(err);
